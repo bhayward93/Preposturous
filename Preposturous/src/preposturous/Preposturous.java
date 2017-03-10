@@ -5,6 +5,10 @@
  */
 package preposturous;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import preposturous.GUI.LoginGUI;
+
 /**
  *
  * @author nemo
@@ -15,7 +19,20 @@ public class Preposturous {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        
+        displayLoginGUI();    
     }
+   
+    /**
+     * Displays the login panel. 
+     */
+    private static void displayLoginGUI(){       
+        
+        JFrame jLoginFrame = new JFrame();
+        JPanel jLoginPanel = new LoginGUI();
+        jLoginFrame.add(jLoginPanel);
+        jLoginFrame.setVisible(true);
+    }
+    
     
 }
