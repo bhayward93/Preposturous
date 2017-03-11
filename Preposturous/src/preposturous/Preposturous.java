@@ -31,6 +31,8 @@ public class Preposturous {
         JFrame jLoginFrame = new JFrame();
         JPanel jLoginPanel = new LoginGUI();
         jLoginFrame.add(jLoginPanel);
+        jLoginFrame.setSize(430,222);
+        jLoginFrame.setResizable(false);
         jLoginFrame.setVisible(true);
     }
     
