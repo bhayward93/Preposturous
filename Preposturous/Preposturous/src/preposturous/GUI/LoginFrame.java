@@ -9,12 +9,12 @@ package preposturous.GUI;
  *
  * @author nemo
  */
-public class LoginGUI extends javax.swing.JPanel {
+public class LoginFrame extends javax.swing.JPanel {
 
     /**
      * Creates new form LoginGUI
      */
-    public LoginGUI() {
+    public LoginFrame() {
         initComponents();
     }
 

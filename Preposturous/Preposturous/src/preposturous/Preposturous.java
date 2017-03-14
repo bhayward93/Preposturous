@@ -7,7 +7,7 @@ package preposturous;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import preposturous.GUI.LoginGUI;
+import preposturous.GUI.LoginFrame;
 
 /**
  *
@@ -29,7 +29,7 @@ public class Preposturous {
     private static void displayLoginGUI(){       
         
         JFrame jLoginFrame = new JFrame();
-        JPanel jLoginPanel = new LoginGUI();
+        JPanel jLoginPanel = new LoginFrame();
         jLoginFrame.add(jLoginPanel);
         jLoginFrame.setSize(430,222);
         jLoginFrame.setResizable(false);
