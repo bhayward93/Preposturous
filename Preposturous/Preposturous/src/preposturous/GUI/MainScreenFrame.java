@@ -49,7 +49,14 @@ public class MainScreenFrame extends javax.swing.JPanel {
         jPanel12 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
-        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        settingsPanel = new javax.swing.JPanel();
+        searchPanel = new javax.swing.JPanel();
+        newAppointmentPanel = new javax.swing.JPanel();
+        startAppointmentPanel = new javax.swing.JPanel();
+        addPatientPanel = new javax.swing.JPanel();
+        welcomePanel = new javax.swing.JPanel();
+        findPatientPanel = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -98,7 +105,7 @@ public class MainScreenFrame extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addGap(466, 466, 466))
@@ -175,15 +182,13 @@ public class MainScreenFrame extends javax.swing.JPanel {
                 .addGap(23, 23, 23))
         );
 
-        jSplitPane1.setDividerLocation(539);
-        jSplitPane1.setMaximumSize(new java.awt.Dimension(540, 2147483647));
-        jSplitPane1.setMinimumSize(new java.awt.Dimension(540, 127));
+        jSplitPane1.setDividerLocation(540);
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 178, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,10 +199,7 @@ public class MainScreenFrame extends javax.swing.JPanel {
 
         jPanel12.setBackground(new java.awt.Color(65, 71, 96));
 
-        jTextArea2.setBackground(new java.awt.Color(255, 255, 204));
         jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jTextArea2.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
@@ -205,10 +207,10 @@ public class MainScreenFrame extends javax.swing.JPanel {
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,20 +224,112 @@ public class MainScreenFrame extends javax.swing.JPanel {
 
         jSplitPane1.setRightComponent(jTabbedPane3);
 
-        jPanel4.setBackground(new java.awt.Color(46, 64, 85));
+        jPanel5.setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 538, Short.MAX_VALUE)
+        javax.swing.GroupLayout settingsPanelLayout = new javax.swing.GroupLayout(settingsPanel);
+        settingsPanel.setLayout(settingsPanelLayout);
+        settingsPanelLayout.setHorizontalGroup(
+            settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 539, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        settingsPanelLayout.setVerticalGroup(
+            settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 421, Short.MAX_VALUE)
         );
 
-        jSplitPane1.setLeftComponent(jPanel4);
+        jPanel5.add(settingsPanel, "card8");
+
+        searchPanel.setBackground(new java.awt.Color(0, 255, 204));
+
+        javax.swing.GroupLayout searchPanelLayout = new javax.swing.GroupLayout(searchPanel);
+        searchPanel.setLayout(searchPanelLayout);
+        searchPanelLayout.setHorizontalGroup(
+            searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 539, Short.MAX_VALUE)
+        );
+        searchPanelLayout.setVerticalGroup(
+            searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 421, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(searchPanel, "card2");
+
+        newAppointmentPanel.setBackground(new java.awt.Color(0, 255, 204));
+
+        javax.swing.GroupLayout newAppointmentPanelLayout = new javax.swing.GroupLayout(newAppointmentPanel);
+        newAppointmentPanel.setLayout(newAppointmentPanelLayout);
+        newAppointmentPanelLayout.setHorizontalGroup(
+            newAppointmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 539, Short.MAX_VALUE)
+        );
+        newAppointmentPanelLayout.setVerticalGroup(
+            newAppointmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 421, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(newAppointmentPanel, "card2");
+
+        startAppointmentPanel.setBackground(new java.awt.Color(0, 255, 204));
+
+        javax.swing.GroupLayout startAppointmentPanelLayout = new javax.swing.GroupLayout(startAppointmentPanel);
+        startAppointmentPanel.setLayout(startAppointmentPanelLayout);
+        startAppointmentPanelLayout.setHorizontalGroup(
+            startAppointmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 539, Short.MAX_VALUE)
+        );
+        startAppointmentPanelLayout.setVerticalGroup(
+            startAppointmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 421, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(startAppointmentPanel, "card2");
+
+        addPatientPanel.setBackground(new java.awt.Color(0, 255, 204));
+
+        javax.swing.GroupLayout addPatientPanelLayout = new javax.swing.GroupLayout(addPatientPanel);
+        addPatientPanel.setLayout(addPatientPanelLayout);
+        addPatientPanelLayout.setHorizontalGroup(
+            addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 539, Short.MAX_VALUE)
+        );
+        addPatientPanelLayout.setVerticalGroup(
+            addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 421, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(addPatientPanel, "card2");
+
+        welcomePanel.setBackground(new java.awt.Color(255, 204, 0));
+
+        javax.swing.GroupLayout welcomePanelLayout = new javax.swing.GroupLayout(welcomePanel);
+        welcomePanel.setLayout(welcomePanelLayout);
+        welcomePanelLayout.setHorizontalGroup(
+            welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 539, Short.MAX_VALUE)
+        );
+        welcomePanelLayout.setVerticalGroup(
+            welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 421, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(welcomePanel, "card3");
+
+        findPatientPanel.setBackground(new java.awt.Color(0, 255, 204));
+
+        javax.swing.GroupLayout findPatientPanelLayout = new javax.swing.GroupLayout(findPatientPanel);
+        findPatientPanel.setLayout(findPatientPanelLayout);
+        findPatientPanelLayout.setHorizontalGroup(
+            findPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 539, Short.MAX_VALUE)
+        );
+        findPatientPanelLayout.setVerticalGroup(
+            findPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 421, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(findPatientPanel, "card2");
+
+        jSplitPane1.setLeftComponent(jPanel5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -245,7 +339,7 @@ public class MainScreenFrame extends javax.swing.JPanel {
                 .addGap(2, 2, 2)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSplitPane1)
                 .addContainerGap())
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -259,7 +353,7 @@ public class MainScreenFrame extends javax.swing.JPanel {
                         .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jSplitPane1))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -277,6 +371,8 @@ public class MainScreenFrame extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel addPatientPanel;
+    private javax.swing.JPanel findPatientPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -291,14 +387,19 @@ public class MainScreenFrame extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JPanel newAppointmentPanel;
     private java.awt.PopupMenu popupMenu1;
     private java.awt.PopupMenu popupMenu2;
+    private javax.swing.JPanel searchPanel;
+    private javax.swing.JPanel settingsPanel;
+    private javax.swing.JPanel startAppointmentPanel;
+    private javax.swing.JPanel welcomePanel;
     // End of variables declaration//GEN-END:variables
 }
