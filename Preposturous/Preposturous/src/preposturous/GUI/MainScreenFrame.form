@@ -2,57 +2,7 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <NonVisualComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-    </Container>
-    <Container class="javax.swing.JPanel" name="jPanel2">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="775" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="543" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-    </Container>
-    <Menu class="java.awt.PopupMenu" name="popupMenu1">
-      <Properties>
-        <Property name="label" type="java.lang.String" value="popupMenu1"/>
-      </Properties>
-    </Menu>
-    <Container class="javax.swing.JPopupMenu" name="jPopupMenu1">
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
-      </Layout>
-    </Container>
-    <Menu class="java.awt.PopupMenu" name="popupMenu2">
-      <Properties>
-        <Property name="label" type="java.lang.String" value="popupMenu2"/>
-      </Properties>
-    </Menu>
-    <Component class="javax.swing.JCheckBoxMenuItem" name="jCheckBoxMenuItem1">
-      <Properties>
-        <Property name="selected" type="boolean" value="true"/>
-        <Property name="text" type="java.lang.String" value="jCheckBoxMenuItem1"/>
-      </Properties>
+    <Component class="org.jdesktop.swingx.painter.BusyPainter" name="busyPainter1">
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -354,52 +304,6 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPanel4">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="8d" green="bc" red="5a" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                    <EtchetBorder/>
-                  </Border>
-                </Property>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card8"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="jButton6" min="-2" pref="103" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton6" alignment="1" pref="439" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton6">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="8d" green="bc" red="5a" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="jButton6"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
-                  </Events>
-                </Component>
-              </SubComponents>
-            </Container>
             <Container class="javax.swing.JPanel" name="welcomePanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -415,7 +319,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="92" max="32767" attributes="0"/>
@@ -443,7 +347,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="addPatientPanel">
+            <Container class="org.jdesktop.swingx.JXPanel" name="addPatientPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="55" green="40" red="2e" type="rgb"/>
@@ -451,7 +355,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card2"/>
+                  <CardConstraints cardName="card9"/>
                 </Constraint>
               </Constraints>
 
@@ -459,269 +363,344 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="nameLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="nameLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="nameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="nameLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="postcodeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="postcodeLabel1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                              <Component id="address1Label1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="address1Label" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="cityLabel" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="address2field" min="-2" pref="207" max="-2" attributes="0"/>
-                                      <Component id="genderField" min="-2" pref="207" max="-2" attributes="0"/>
-                                      <Component id="firstNameField" min="-2" pref="207" max="-2" attributes="0"/>
-                                      <Component id="middleNameField" min="-2" pref="207" max="-2" attributes="0"/>
-                                      <Component id="surnameField" min="-2" pref="207" max="-2" attributes="0"/>
-                                      <Component id="dOBNameField1" min="-2" pref="207" max="-2" attributes="0"/>
-                                      <Component id="address1Field" alignment="0" min="-2" pref="207" max="-2" attributes="0"/>
-                                      <Component id="address3field" alignment="0" min="-2" pref="207" max="-2" attributes="0"/>
-                                      <Component id="postcodeField" alignment="0" min="-2" pref="207" max="-2" attributes="0"/>
-                                      <Component id="telephoneField" alignment="0" min="-2" pref="207" max="-2" attributes="0"/>
-                                      <Component id="emailField" alignment="0" min="-2" pref="207" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace pref="146" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="townCityField" alignment="0" min="-2" pref="207" max="-2" attributes="0"/>
-                                      <Component id="countyField" alignment="0" min="-2" pref="207" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="nameLabel4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="nameLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nameLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nameLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="address1Label2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="address1Label3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cityLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="postcodeLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="postcodeLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jXTextField13" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
+                                      <Component id="jXTextField12" alignment="0" pref="209" max="32767" attributes="0"/>
+                                      <Component id="jXTextField11" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
+                                      <Component id="jXTextField9" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jXTextField10" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jXTextField8" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jXTextField6" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jXTextField7" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jXTextField5" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jXTextField4" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jXTextField2" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jXTextField3" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jXTextField1" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                                  <Component id="addPatientButton" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="filler1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="257" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Component id="filler1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="nameLabel3" min="-2" max="-2" attributes="0"/>
-                              <Component id="firstNameField" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="nameLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jXTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="middleNameField" min="-2" max="-2" attributes="0"/>
-                              <Component id="nameLabel2" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="nameLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jXTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="surnameField" min="-2" max="-2" attributes="0"/>
-                              <Component id="nameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="genderField" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="nameLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jXTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="dOBNameField1" min="-2" max="-2" attributes="0"/>
-                              <Component id="nameLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jXTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="address1Field" min="-2" max="-2" attributes="0"/>
-                              <Component id="address1Label" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="nameLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jXTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="address2field" min="-2" max="-2" attributes="0"/>
-                              <Component id="address1Label1" alignment="1" min="-2" pref="15" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="address1Label2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jXTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="address3field" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="address1Label3" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
+                              <Component id="jXTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="townCityField" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jXTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="countyField" min="-2" max="-2" attributes="0"/>
-                              <Component id="cityLabel" alignment="1" min="-2" pref="15" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jXTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="postcodeField" min="-2" max="-2" attributes="0"/>
-                              <Component id="postcodeLabel" alignment="1" min="-2" pref="15" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="cityLabel1" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
+                              <Component id="jXTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="emailField" min="-2" max="-2" attributes="0"/>
-                              <Component id="postcodeLabel1" alignment="1" min="-2" pref="15" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="postcodeLabel2" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
+                              <Component id="jXTextField11" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="telephoneField" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="postcodeLabel3" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
+                              <Component id="jXTextField12" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jXTextField13" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="addPatientButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="13" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="nameLabel">
+                <Component class="javax.swing.JLabel" name="nameLabel4">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Surname"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="nameLabel1">
+                <Component class="javax.swing.JLabel" name="nameLabel5">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Date of Birth"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="address1Label">
+                <Component class="javax.swing.JLabel" name="address1Label2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Address Line 1"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="address1Label1">
+                <Component class="javax.swing.JLabel" name="address1Label3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Address Line 2"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="cityLabel">
+                <Component class="javax.swing.JLabel" name="cityLabel1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="County"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="postcodeLabel">
+                <Component class="javax.swing.JLabel" name="postcodeLabel2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Postcode"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="postcodeLabel1">
+                <Component class="javax.swing.JLabel" name="postcodeLabel3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Email"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="nameLabel2">
+                <Component class="javax.swing.JLabel" name="nameLabel6">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Middle Name"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="nameLabel3">
+                <Component class="javax.swing.JLabel" name="nameLabel7">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="First Name"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel5">
+                <Component class="javax.swing.JLabel" name="jLabel10">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Gender"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel6">
+                <Component class="javax.swing.JLabel" name="jLabel11">
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel7">
+                <Component class="javax.swing.JLabel" name="jLabel12">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Address Line 3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel8">
+                <Component class="javax.swing.JLabel" name="jLabel13">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Town/City"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel9">
+                <Component class="javax.swing.JLabel" name="jLabel14">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Telephone"/>
                   </Properties>
                 </Component>
-                <Component class="java.awt.TextField" name="middleNameField">
+                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField1">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="bb" green="bb" red="bb" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="[69,73,74]"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 12]"/>
+                    </Property>
                   </Properties>
                 </Component>
-                <Component class="java.awt.TextField" name="firstNameField">
+                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField2">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="bb" green="bb" red="bb" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="[69,73,74]"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 12]"/>
+                    </Property>
                   </Properties>
                 </Component>
-                <Component class="java.awt.TextField" name="genderField">
+                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField3">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="bb" green="bb" red="bb" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="[69,73,74]"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 12]"/>
+                    </Property>
                   </Properties>
                 </Component>
-                <Component class="java.awt.TextField" name="surnameField">
+                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField4">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="bb" green="bb" red="bb" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="[69,73,74]"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 12]"/>
+                    </Property>
                   </Properties>
                 </Component>
-                <Component class="java.awt.TextField" name="address2field">
+                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField5">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="bb" green="bb" red="bb" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="[69,73,74]"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 12]"/>
+                    </Property>
                   </Properties>
                 </Component>
-                <Component class="java.awt.TextField" name="dOBNameField1">
+                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField6">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="bb" green="bb" red="bb" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="[69,73,74]"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 12]"/>
+                    </Property>
                   </Properties>
                 </Component>
-                <Component class="java.awt.TextField" name="address1Field">
+                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField7">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="bb" green="bb" red="bb" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="[69,73,74]"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 12]"/>
+                    </Property>
                   </Properties>
                 </Component>
-                <Component class="java.awt.TextField" name="address3field">
+                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField8">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="bb" green="bb" red="bb" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="[69,73,74]"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 12]"/>
+                    </Property>
                   </Properties>
                 </Component>
-                <Component class="java.awt.TextField" name="townCityField">
+                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField9">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="bb" green="bb" red="bb" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="[69,73,74]"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 12]"/>
+                    </Property>
                   </Properties>
                 </Component>
-                <Component class="java.awt.TextField" name="postcodeField">
+                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField10">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="[69,73,74]"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 12]"/>
+                    </Property>
                   </Properties>
                 </Component>
-                <Component class="java.awt.TextField" name="countyField">
+                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField11">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="bb" green="bb" red="bb" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="[69,73,74]"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 12]"/>
+                    </Property>
                   </Properties>
                 </Component>
-                <Component class="java.awt.TextField" name="telephoneField">
+                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField12">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="bb" green="bb" red="bb" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="[69,73,74]"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 12]"/>
+                    </Property>
                   </Properties>
                 </Component>
-                <Component class="java.awt.TextField" name="emailField">
+                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField13">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="bb" green="bb" red="bb" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="[69,73,74]"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 12]"/>
+                    </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.Box$Filler" name="filler1">
+                <Component class="org.jdesktop.swingx.JXButton" name="addPatientButton">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Add Patient"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -740,7 +719,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="615" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="539" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -765,7 +744,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="615" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="539" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -802,7 +781,7 @@
                           <Component id="DOB2field" min="-2" pref="23" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="DOB3field" min="-2" pref="23" max="-2" attributes="0"/>
-                          <EmptySpace pref="383" max="32767" attributes="0"/>
+                          <EmptySpace pref="307" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -868,7 +847,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="615" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="539" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -905,7 +884,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="panel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="291" max="32767" attributes="0"/>
+                          <EmptySpace pref="23" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -922,26 +901,26 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="addressField" min="-2" max="-2" attributes="0"/>
                                   <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="label3" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="460" max="32767" attributes="0"/>
+                              <EmptySpace pref="401" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                               <Component id="label2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                               <Component id="label3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                               <Component id="addressField" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="33" max="32767" attributes="0"/>
+                              <EmptySpace pref="109" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>

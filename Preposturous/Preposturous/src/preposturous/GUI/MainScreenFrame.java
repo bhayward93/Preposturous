@@ -27,12 +27,7 @@ public class MainScreenFrame extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        popupMenu1 = new java.awt.PopupMenu();
-        jPopupMenu1 = new javax.swing.JPopupMenu();
-        popupMenu2 = new java.awt.PopupMenu();
-        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        busyPainter1 = new org.jdesktop.swingx.painter.BusyPainter();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -50,39 +45,37 @@ public class MainScreenFrame extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jPanel5 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
         welcomePanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        addPatientPanel = new javax.swing.JPanel();
-        nameLabel = new javax.swing.JLabel();
-        nameLabel1 = new javax.swing.JLabel();
-        address1Label = new javax.swing.JLabel();
-        address1Label1 = new javax.swing.JLabel();
-        cityLabel = new javax.swing.JLabel();
-        postcodeLabel = new javax.swing.JLabel();
-        postcodeLabel1 = new javax.swing.JLabel();
-        nameLabel2 = new javax.swing.JLabel();
-        nameLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        middleNameField = new java.awt.TextField();
-        firstNameField = new java.awt.TextField();
-        genderField = new java.awt.TextField();
-        surnameField = new java.awt.TextField();
-        address2field = new java.awt.TextField();
-        dOBNameField1 = new java.awt.TextField();
-        address1Field = new java.awt.TextField();
-        address3field = new java.awt.TextField();
-        townCityField = new java.awt.TextField();
-        postcodeField = new java.awt.TextField();
-        countyField = new java.awt.TextField();
-        telephoneField = new java.awt.TextField();
-        emailField = new java.awt.TextField();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
+        addPatientPanel = new org.jdesktop.swingx.JXPanel();
+        nameLabel4 = new javax.swing.JLabel();
+        nameLabel5 = new javax.swing.JLabel();
+        address1Label2 = new javax.swing.JLabel();
+        address1Label3 = new javax.swing.JLabel();
+        cityLabel1 = new javax.swing.JLabel();
+        postcodeLabel2 = new javax.swing.JLabel();
+        postcodeLabel3 = new javax.swing.JLabel();
+        nameLabel6 = new javax.swing.JLabel();
+        nameLabel7 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jXTextField1 = new org.jdesktop.swingx.JXTextField();
+        jXTextField2 = new org.jdesktop.swingx.JXTextField();
+        jXTextField3 = new org.jdesktop.swingx.JXTextField();
+        jXTextField4 = new org.jdesktop.swingx.JXTextField();
+        jXTextField5 = new org.jdesktop.swingx.JXTextField();
+        jXTextField6 = new org.jdesktop.swingx.JXTextField();
+        jXTextField7 = new org.jdesktop.swingx.JXTextField();
+        jXTextField8 = new org.jdesktop.swingx.JXTextField();
+        jXTextField9 = new org.jdesktop.swingx.JXTextField();
+        jXTextField10 = new org.jdesktop.swingx.JXTextField();
+        jXTextField11 = new org.jdesktop.swingx.JXTextField();
+        jXTextField12 = new org.jdesktop.swingx.JXTextField();
+        jXTextField13 = new org.jdesktop.swingx.JXTextField();
+        addPatientButton = new org.jdesktop.swingx.JXButton();
         settingsPanel = new javax.swing.JPanel();
         searchPanel = new javax.swing.JPanel();
         newAppointmentPanel = new javax.swing.JPanel();
@@ -97,35 +90,6 @@ public class MainScreenFrame extends javax.swing.JPanel {
         label2 = new java.awt.Label();
         label3 = new java.awt.Label();
         addressField = new java.awt.Label();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 775, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 543, Short.MAX_VALUE)
-        );
-
-        popupMenu1.setLabel("popupMenu1");
-
-        popupMenu2.setLabel("popupMenu2");
-
-        jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         setBackground(new java.awt.Color(41, 47, 60));
 
@@ -267,32 +231,6 @@ public class MainScreenFrame extends javax.swing.JPanel {
 
             jPanel5.setLayout(new java.awt.CardLayout());
 
-            jPanel4.setBackground(new java.awt.Color(90, 188, 141));
-            jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-            jButton6.setBackground(new java.awt.Color(90, 188, 141));
-            jButton6.setText("jButton6");
-            jButton6.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton6ActionPerformed(evt);
-                }
-            });
-
-            javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-            jPanel4.setLayout(jPanel4Layout);
-            jPanel4Layout.setHorizontalGroup(
-                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-            );
-            jPanel4Layout.setVerticalGroup(
-                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
-            );
-
-            jPanel5.add(jPanel4, "card8");
-
             welcomePanel.setBackground(new java.awt.Color(46, 64, 85));
 
             jLabel4.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -319,169 +257,193 @@ public class MainScreenFrame extends javax.swing.JPanel {
 
             addPatientPanel.setBackground(new java.awt.Color(46, 64, 85));
 
-            nameLabel.setText("Surname");
+            nameLabel4.setText("Surname");
 
-            nameLabel1.setText("Date of Birth");
+            nameLabel5.setText("Date of Birth");
 
-            address1Label.setText("Address Line 1");
+            address1Label2.setText("Address Line 1");
 
-            address1Label1.setText("Address Line 2");
+            address1Label3.setText("Address Line 2");
 
-            cityLabel.setText("County");
+            cityLabel1.setText("County");
 
-            postcodeLabel.setText("Postcode");
+            postcodeLabel2.setText("Postcode");
 
-            postcodeLabel1.setText("Email");
+            postcodeLabel3.setText("Email");
 
-            nameLabel2.setText("Middle Name");
+            nameLabel6.setText("Middle Name");
 
-            nameLabel3.setText("First Name");
+            nameLabel7.setText("First Name");
 
-            jLabel5.setText("Gender");
+            jLabel10.setText("Gender");
 
-            jLabel7.setText("Address Line 3");
+            jLabel12.setText("Address Line 3");
 
-            jLabel8.setText("Town/City");
+            jLabel13.setText("Town/City");
 
-            jLabel9.setText("Telephone");
+            jLabel14.setText("Telephone");
 
-            middleNameField.setName(""); // NOI18N
+            jXTextField1.setBackground(new java.awt.Color(187, 187, 187));
+            jXTextField1.setText("[69,73,74]");
+            jXTextField1.setMinimumSize(new java.awt.Dimension(14, 12));
 
-            firstNameField.setName(""); // NOI18N
+            jXTextField2.setBackground(new java.awt.Color(187, 187, 187));
+            jXTextField2.setText("[69,73,74]");
+            jXTextField2.setMinimumSize(new java.awt.Dimension(14, 12));
 
-            genderField.setName(""); // NOI18N
+            jXTextField3.setBackground(new java.awt.Color(187, 187, 187));
+            jXTextField3.setText("[69,73,74]");
+            jXTextField3.setMinimumSize(new java.awt.Dimension(14, 12));
 
-            surnameField.setName(""); // NOI18N
+            jXTextField4.setBackground(new java.awt.Color(187, 187, 187));
+            jXTextField4.setText("[69,73,74]");
+            jXTextField4.setMinimumSize(new java.awt.Dimension(14, 12));
 
-            address2field.setName(""); // NOI18N
+            jXTextField5.setBackground(new java.awt.Color(187, 187, 187));
+            jXTextField5.setText("[69,73,74]");
+            jXTextField5.setMinimumSize(new java.awt.Dimension(14, 12));
 
-            dOBNameField1.setName(""); // NOI18N
+            jXTextField6.setBackground(new java.awt.Color(187, 187, 187));
+            jXTextField6.setText("[69,73,74]");
+            jXTextField6.setMinimumSize(new java.awt.Dimension(14, 12));
 
-            address1Field.setName(""); // NOI18N
+            jXTextField7.setBackground(new java.awt.Color(187, 187, 187));
+            jXTextField7.setText("[69,73,74]");
+            jXTextField7.setMinimumSize(new java.awt.Dimension(14, 12));
 
-            address3field.setName(""); // NOI18N
+            jXTextField8.setBackground(new java.awt.Color(187, 187, 187));
+            jXTextField8.setText("[69,73,74]");
+            jXTextField8.setMinimumSize(new java.awt.Dimension(14, 12));
 
-            townCityField.setName(""); // NOI18N
+            jXTextField9.setBackground(new java.awt.Color(187, 187, 187));
+            jXTextField9.setText("[69,73,74]");
+            jXTextField9.setMinimumSize(new java.awt.Dimension(14, 12));
 
-            postcodeField.setName(""); // NOI18N
+            jXTextField10.setBackground(new java.awt.Color(255, 255, 255));
+            jXTextField10.setText("[69,73,74]");
+            jXTextField10.setMinimumSize(new java.awt.Dimension(14, 12));
 
-            countyField.setName(""); // NOI18N
+            jXTextField11.setBackground(new java.awt.Color(187, 187, 187));
+            jXTextField11.setText("[69,73,74]");
+            jXTextField11.setMinimumSize(new java.awt.Dimension(14, 12));
 
-            telephoneField.setName(""); // NOI18N
+            jXTextField12.setBackground(new java.awt.Color(187, 187, 187));
+            jXTextField12.setText("[69,73,74]");
+            jXTextField12.setMinimumSize(new java.awt.Dimension(14, 12));
 
-            emailField.setName(""); // NOI18N
+            jXTextField13.setBackground(new java.awt.Color(187, 187, 187));
+            jXTextField13.setText("[69,73,74]");
+            jXTextField13.setMinimumSize(new java.awt.Dimension(14, 12));
+
+            addPatientButton.setText("Add Patient");
 
             javax.swing.GroupLayout addPatientPanelLayout = new javax.swing.GroupLayout(addPatientPanel);
             addPatientPanel.setLayout(addPatientPanelLayout);
             addPatientPanelLayout.setHorizontalGroup(
                 addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(addPatientPanelLayout.createSequentialGroup()
-                    .addGap(40, 40, 40)
-                    .addComponent(jLabel6)
+                    .addGap(56, 56, 56)
+                    .addComponent(jLabel11)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(nameLabel2)
-                        .addComponent(nameLabel3)
-                        .addComponent(nameLabel)
-                        .addComponent(jLabel5)
-                        .addComponent(nameLabel1)
-                        .addComponent(postcodeLabel)
-                        .addComponent(postcodeLabel1)
-                        .addComponent(jLabel9)
-                        .addComponent(address1Label1)
-                        .addComponent(address1Label)
-                        .addComponent(jLabel7)
-                        .addComponent(jLabel8)
-                        .addComponent(cityLabel))
-                    .addGap(36, 36, 36)
-                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addPatientPanelLayout.createSequentialGroup()
+                            .addComponent(nameLabel4)
+                            .addGap(0, 0, Short.MAX_VALUE))
                         .addGroup(addPatientPanelLayout.createSequentialGroup()
                             .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(address2field, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(genderField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(firstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(middleNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(surnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(dOBNameField1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(address1Field, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(address3field, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(postcodeField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(telephoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addContainerGap(146, Short.MAX_VALUE))
-                        .addGroup(addPatientPanelLayout.createSequentialGroup()
-                            .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(townCityField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(countyField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(0, 0, Short.MAX_VALUE))))
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPatientPanelLayout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(257, 257, 257))
+                                .addComponent(nameLabel7)
+                                .addComponent(nameLabel6)
+                                .addComponent(jLabel10)
+                                .addComponent(nameLabel5)
+                                .addComponent(address1Label2)
+                                .addComponent(address1Label3)
+                                .addComponent(jLabel12)
+                                .addComponent(jLabel13)
+                                .addComponent(cityLabel1)
+                                .addComponent(postcodeLabel2)
+                                .addComponent(postcodeLabel3)
+                                .addComponent(jLabel14))
+                            .addGap(25, 25, 25)
+                            .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jXTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jXTextField12, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                                .addComponent(jXTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jXTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jXTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jXTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jXTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jXTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jXTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jXTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jXTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jXTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jXTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                            .addComponent(addPatientButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap())
             );
             addPatientPanelLayout.setVerticalGroup(
                 addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(addPatientPanelLayout.createSequentialGroup()
-                    .addGap(15, 15, 15)
-                    .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(32, 32, 32)
+                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nameLabel7)
+                        .addComponent(jXTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(nameLabel3)
-                        .addComponent(firstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nameLabel6)
+                        .addComponent(jXTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(middleNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(nameLabel2))
+                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nameLabel4)
+                        .addComponent(jXTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(surnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(nameLabel, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(genderField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel10)
+                        .addComponent(jXTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(dOBNameField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(nameLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nameLabel5)
+                        .addComponent(jXTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(address1Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(address1Label, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(address1Label2)
+                        .addComponent(jXTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(address2field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(address1Label1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(address1Label3, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jXTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(address3field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel12)
+                        .addComponent(jXTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(townCityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel13)
+                        .addComponent(jXTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(countyField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(cityLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cityLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jXTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(postcodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(postcodeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(postcodeLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jXTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(postcodeLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(postcodeLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jXTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(telephoneField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel9))
-                    .addGap(27, 27, 27)
-                    .addComponent(jLabel6)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(addPatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel14)
+                        .addComponent(jXTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(addPatientButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(19, 19, 19)
+                    .addComponent(jLabel11)
+                    .addContainerGap(13, Short.MAX_VALUE))
             );
 
-            jPanel5.add(addPatientPanel, "card2");
+            jPanel5.add(addPatientPanel, "card9");
 
             settingsPanel.setBackground(new java.awt.Color(46, 64, 85));
 
@@ -489,7 +451,7 @@ public class MainScreenFrame extends javax.swing.JPanel {
             settingsPanel.setLayout(settingsPanelLayout);
             settingsPanelLayout.setHorizontalGroup(
                 settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 615, Short.MAX_VALUE)
+                .addGap(0, 539, Short.MAX_VALUE)
             );
             settingsPanelLayout.setVerticalGroup(
                 settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -504,7 +466,7 @@ public class MainScreenFrame extends javax.swing.JPanel {
             searchPanel.setLayout(searchPanelLayout);
             searchPanelLayout.setHorizontalGroup(
                 searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 615, Short.MAX_VALUE)
+                .addGap(0, 539, Short.MAX_VALUE)
             );
             searchPanelLayout.setVerticalGroup(
                 searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -540,7 +502,7 @@ public class MainScreenFrame extends javax.swing.JPanel {
                     .addComponent(DOB2field, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(DOB3field, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(383, Short.MAX_VALUE))
+                    .addContainerGap(307, Short.MAX_VALUE))
             );
             newAppointmentPanelLayout.setVerticalGroup(
                 newAppointmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -565,7 +527,7 @@ public class MainScreenFrame extends javax.swing.JPanel {
             startAppointmentPanel.setLayout(startAppointmentPanelLayout);
             startAppointmentPanelLayout.setHorizontalGroup(
                 startAppointmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 615, Short.MAX_VALUE)
+                .addGap(0, 539, Short.MAX_VALUE)
             );
             startAppointmentPanelLayout.setVerticalGroup(
                 startAppointmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -593,23 +555,23 @@ public class MainScreenFrame extends javax.swing.JPanel {
             panel1Layout.setHorizontalGroup(
                 panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panel1Layout.createSequentialGroup()
-                    .addGap(36, 36, 36)
+                    .addGap(19, 19, 19)
                     .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(460, Short.MAX_VALUE))
+                    .addContainerGap(401, Short.MAX_VALUE))
             );
             panel1Layout.setVerticalGroup(
                 panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panel1Layout.createSequentialGroup()
-                    .addGap(28, 28, 28)
+                    .addGap(110, 110, 110)
                     .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGap(120, 120, 120)
                     .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(14, 14, 14)
                     .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(33, Short.MAX_VALUE))
+                    .addContainerGap(109, Short.MAX_VALUE))
             );
 
             javax.swing.GroupLayout findPatientPanelLayout = new javax.swing.GroupLayout(findPatientPanel);
@@ -626,7 +588,7 @@ public class MainScreenFrame extends javax.swing.JPanel {
                 .addGroup(findPatientPanelLayout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(291, Short.MAX_VALUE))
+                    .addContainerGap(23, Short.MAX_VALUE))
             );
 
             jPanel5.add(findPatientPanel, "card2");
@@ -671,81 +633,70 @@ public class MainScreenFrame extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DOB2field;
     private javax.swing.JTextField DOB3field;
     private java.awt.Label Time;
-    private javax.swing.JPanel addPatientPanel;
-    private java.awt.TextField address1Field;
-    private javax.swing.JLabel address1Label;
-    private javax.swing.JLabel address1Label1;
-    private java.awt.TextField address2field;
-    private java.awt.TextField address3field;
+    private org.jdesktop.swingx.JXButton addPatientButton;
+    private org.jdesktop.swingx.JXPanel addPatientPanel;
+    private javax.swing.JLabel address1Label2;
+    private javax.swing.JLabel address1Label3;
     private java.awt.Label addressField;
-    private javax.swing.JLabel cityLabel;
-    private java.awt.TextField countyField;
-    private java.awt.TextField dOBNameField1;
-    private java.awt.TextField emailField;
-    private javax.swing.Box.Filler filler1;
+    private org.jdesktop.swingx.painter.BusyPainter busyPainter1;
+    private javax.swing.JLabel cityLabel1;
     private javax.swing.JPanel findPatientPanel;
-    private java.awt.TextField firstNameField;
-    private java.awt.TextField genderField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
+    private org.jdesktop.swingx.JXTextField jXTextField1;
+    private org.jdesktop.swingx.JXTextField jXTextField10;
+    private org.jdesktop.swingx.JXTextField jXTextField11;
+    private org.jdesktop.swingx.JXTextField jXTextField12;
+    private org.jdesktop.swingx.JXTextField jXTextField13;
+    private org.jdesktop.swingx.JXTextField jXTextField2;
+    private org.jdesktop.swingx.JXTextField jXTextField3;
+    private org.jdesktop.swingx.JXTextField jXTextField4;
+    private org.jdesktop.swingx.JXTextField jXTextField5;
+    private org.jdesktop.swingx.JXTextField jXTextField6;
+    private org.jdesktop.swingx.JXTextField jXTextField7;
+    private org.jdesktop.swingx.JXTextField jXTextField8;
+    private org.jdesktop.swingx.JXTextField jXTextField9;
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label label4;
-    private java.awt.TextField middleNameField;
-    private javax.swing.JLabel nameLabel;
-    private javax.swing.JLabel nameLabel1;
-    private javax.swing.JLabel nameLabel2;
-    private javax.swing.JLabel nameLabel3;
+    private javax.swing.JLabel nameLabel4;
+    private javax.swing.JLabel nameLabel5;
+    private javax.swing.JLabel nameLabel6;
+    private javax.swing.JLabel nameLabel7;
     private javax.swing.JPanel newAppointmentPanel;
     private java.awt.Panel panel1;
-    private java.awt.PopupMenu popupMenu1;
-    private java.awt.PopupMenu popupMenu2;
-    private java.awt.TextField postcodeField;
-    private javax.swing.JLabel postcodeLabel;
-    private javax.swing.JLabel postcodeLabel1;
+    private javax.swing.JLabel postcodeLabel2;
+    private javax.swing.JLabel postcodeLabel3;
     private javax.swing.JPanel searchPanel;
     private javax.swing.JPanel settingsPanel;
     private javax.swing.JPanel startAppointmentPanel;
-    private java.awt.TextField surnameField;
-    private java.awt.TextField telephoneField;
-    private java.awt.TextField townCityField;
     private javax.swing.JPanel welcomePanel;
     // End of variables declaration//GEN-END:variables
 }
