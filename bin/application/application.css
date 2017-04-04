@@ -1,0 +1,26 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.tab-pane *.tab-header-background {
+    -fx-background-color: #414760;
+    -fx-effect: innershadow(two-pass-box , rgba(0,0,0,0.6) , 4, 0.0 , 0 , 0);
+}
+
+.tab-pane *.tab:selected:top{
+	-fx-background-color:  #243242
+}
+
+.tab-pane *.tab:top{
+	-fx-background-color: #414760;
+	-fx-border-radius: 3;
+	-fx-border-color: #0E141B
+	}
+	
+.tab-pane *.text{
+-fx-fill: #FFFFFF;
+-fx-font-family: Calibri
+	
+}
+
+/*Colours */
+/*dark-main{color:#414760;}
+light-main{color:#2E4055;	}*/
