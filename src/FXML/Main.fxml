@@ -3,6 +3,7 @@
 <?import com.gluonhq.charm.glisten.control.TextField?>
 <?import java.net.URL?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
@@ -18,7 +19,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="400.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="mainWindow" prefHeight="400.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <Pane id="body" prefHeight="96.0" prefWidth="658.0" style="-fx-background-color: #243242; -fx-border-color: #0E141B; -fx-border-radius: 3;" stylesheets="@application.css" BorderPane.alignment="CENTER">
          <children>
@@ -93,23 +94,41 @@
          </children></Pane>
    </right>
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <Group BorderPane.alignment="CENTER">
          <children>
-            <ToolBar prefHeight="39.0" prefWidth="381.0" style="-fx-background-color: #414760; -fx-border-radius: 3; -fx-border-color: #0E141B;">
-              <items>
-                <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="91.0" style="-fx-background-color: #F89A2F; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Posterior" />
-                  <Button mnemonicParsing="false" prefWidth="91.0" style="-fx-background-color: #5ABC8D; -fx-border-radius: 3; -fx-border-color: #0E141B;" text="Lateral (L)" />
-                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="91.0" style="-fx-background-color: #D75E3F; -fx-border-radius: 3; -fx-border-color: #0E141B;" text="Anterior" />
-                  <Button mnemonicParsing="false" prefWidth="91.0" style="-fx-background-color: #D75E3F; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Lateral (R)" />
-              </items>
-            </ToolBar>
-            <Pane prefHeight="316.0" prefWidth="391.0" style="-fx-background-color: #414760; -fx-border-radius: 3; -fx-border-color: #0E141B;" stylesheets="@../application/CSS/middlePane.css">
+            <VBox fx:id="welcomePane" prefHeight="304.0" prefWidth="391.0" style="-fx-background-color: #414760;">
                <children>
-                  <Circle fill="#d75e3f" layoutX="196.0" layoutY="191.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Button fx:id="submitButton" layoutX="126.0" layoutY="213.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Submit &amp; Continue" />
+                  <Pane fx:id="welcomePane" prefHeight="313.0" prefWidth="391.0" style="-fx-background-color: #414760;" />
                </children>
-            </Pane>
+            </VBox>
+            <VBox fx:id="cameraPane" alignment="CENTER" prefHeight="305.0" prefWidth="391.0" visible="false">
+               <children>
+                  <ToolBar prefHeight="39.0" prefWidth="381.0" style="-fx-background-color: #414760; -fx-border-radius: 3; -fx-border-color: #0E141B;">
+                    <items>
+                      <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="91.0" style="-fx-background-color: #F89A2F; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Posterior" />
+                        <Button mnemonicParsing="false" prefWidth="91.0" style="-fx-background-color: #5ABC8D; -fx-border-radius: 3; -fx-border-color: #0E141B;" text="Lateral (L)" />
+                        <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="91.0" style="-fx-background-color: #D75E3F; -fx-border-radius: 3; -fx-border-color: #0E141B;" text="Anterior" />
+                        <Button mnemonicParsing="false" prefWidth="91.0" style="-fx-background-color: #D75E3F; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Lateral (R)" />
+                    </items>
+                  </ToolBar>
+                  <Pane prefHeight="316.0" prefWidth="391.0" style="-fx-background-color: #414760; -fx-border-radius: 3; -fx-border-color: #0E141B;" stylesheets="@../application/CSS/middlePane.css">
+                     <children>
+                        <Circle fill="#d75e3f" layoutX="196.0" layoutY="191.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Button fx:id="submitButton" layoutX="126.0" layoutY="213.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Submit &amp; Continue" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <VBox fx:id="findPatientPane" prefHeight="305.0" prefWidth="391.0">
+               <children>
+                  <Pane prefHeight="316.0" prefWidth="391.0" style="-fx-background-color: #414760; -fx-border-radius: 3; -fx-border-color: #0E141B;" stylesheets="@../application/CSS/middlePane.css">
+                     <children>
+                        <Button fx:id="submitButton1" layoutX="245.0" layoutY="264.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Submit &amp; Continue" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
          </children>
-      </VBox>
+      </Group>
    </center>
 </BorderPane>
