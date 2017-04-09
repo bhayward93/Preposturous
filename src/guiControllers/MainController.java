@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBase;
+import javafx.scene.layout.Pane;
 //import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -20,7 +21,7 @@ import javafx.stage.Stage;
  * @author Ben Hayward
  */
 public class MainController implements Controller{
-    HashMap<Button, VBox> buttonsPaneHMap = new HashMap<>(); //storing the data in a HashMap to create a link between types
+    HashMap<Button, Pane> buttonsPaneHMap = new HashMap<>(); //storing the data in a HashMap to create a link between types
 
     //Add updates to assertControllerExists() manually.
     @FXML 
@@ -28,7 +29,7 @@ public class MainController implements Controller{
 	addPatientButton, exportResultsButton; // need to be handled separate: notesButton, diagramButton;
 	
     @FXML
-	private VBox welcomePane, cameraPane, findPatientPane;
+	private Pane welcomePane, cameraPane, findPatientPane;
 	//private BorderPane mainPane;
 
 	@Override
@@ -125,7 +126,7 @@ public class MainController implements Controller{
 		assert findPatientPane != null;				
 	}
 	
-	private final void setOnActions(HashMap<Button, VBox> hMap){
+	private final void setOnActions(HashMap<Button, Pane> hMap){
 		for (Button button : hMap.keySet()){
 			((ButtonBase) button).setOnAction(this::handleButton);
 		}
