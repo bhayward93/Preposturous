@@ -1,20 +1,17 @@
-package application.GUIControllers;
+package guiControllers;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.ResourceBundle;
-
-import javax.swing.text.html.HTMLDocument.Iterator;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.event.EventType;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBase;
-import javafx.scene.layout.BorderPane;
+//import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -22,81 +19,57 @@ import javafx.stage.Stage;
  * Controller of the main screen of the GUI.
  * @author Ben Hayward
  */
-public class MainController implements MouseListener, Initializable{
-    HashMap<Button, VBox> buttonsToPaneHashMap = new HashMap<>(); //storing the data in a hashmap to create a link between types
+public class MainController implements Controller{
+    HashMap<Button, VBox> buttonsPaneHMap = new HashMap<>(); //storing the data in a HashMap to create a link between types
 
     //Add updates to assertControllerExists() manually.
-	private final Button findPatientButton, addAppointmentsButton, findAppointmentsButton, 
-	addPatientButton, exportResultsButton, notesButton, diagramButton;
+    @FXML 
+    private Button findPatientButton, addAppointmentsButton, findAppointmentsButton, 
+	addPatientButton, exportResultsButton; // need to be handled separate: notesButton, diagramButton;
 	
-	private final VBox welcomePane, cameraPane, findPatientPane;
-	private final BorderPane mainPane;
+    @FXML
+	private VBox welcomePane, cameraPane, findPatientPane;
+	//private BorderPane mainPane;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		System.out.println("init");
 		assertControlsExist();
-		buttonsToPaneHashMap.put(findPatientButton, findPatientPane);
-		buttonsToPaneHashMap.put(findPatientButton, cameraPane);
+		
+		buttonsPaneHMap.put(findPatientButton, findPatientPane);
+		buttonsPaneHMap.put(findPatientButton, cameraPane);
+		
+		setOnActions(buttonsPaneHMap);
+		System.out.println("Finished init");
 		
 	}
 	
-	@Override
 	public void mouseClicked(MouseEvent e) {
+		System.out.println("Into MouseClicked");
 		//https://blogs.oracle.com/jmxetc/entry/connecting_scenebuilder_edited_fxml_to
 		//http://stackoverflow.com/questions/29735703/how-to-make-fxml-generated-buttons-work
-		if (e.getSource() == findPatientButton){
-			changeMainPane(findPatientPane.getId());
-		}
-		if (e.getSource() == addAppointmentsButton){
-			
-		}
-		if (e.getSource() ==  findAppointmentsButton){
-			
-		}
-		if (e.getSource() ==  addPatientButton){
-				
-		}			
-		if (e.getSource() ==  exportResultsButton){
-				
-		} 			
-		if (e.getSource() ==  notesButton){
-				
-		}	
-		if (e.getSource() ==  diagramButton){
-				
-		}			
-	}
-
-	private void changeManePane() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+		if (e.getSource() == findPatientButton){System.out.println("HELLO"); changeMainPane(findPatientPane.getId());}
+		if (e.getSource() == addAppointmentsButton){changeMainPane(welcomePane.getId());System.out.println("HELLO");}
+		if (e.getSource() ==  findAppointmentsButton){}
+		if (e.getSource() ==  addPatientButton){}			
+		if (e.getSource() ==  exportResultsButton){} 			
+	//	if (e.getSource() ==  notesButton){}	
+	//	if (e.getSource() ==  diagramButton){}			
 	}
 	
 
+	
+	 public void handleButton(ActionEvent event) {
+	     //Button was clicked, do something...
+		if (event.getSource() == findPatientButton){changeMainPane(findPatientPane.getId());}
+		if (event.getSource() == addAppointmentsButton){changeMainPane(welcomePane.getId());System.out.println("HELLO");}
+		if (event.getSource() ==  findAppointmentsButton){}
+		if (event.getSource() ==  addPatientButton){}				
+		if (event.getSource() ==  exportResultsButton){} 			
+		//if (event.getSource() ==  notesButton){}	
+		//	if (e.getSource() ==  diagramButton){}	
+	 }
+	 	
 	/**
 	 * Changes the main "central" panes contents
 	 * @param path
@@ -134,20 +107,28 @@ public class MainController implements MouseListener, Initializable{
         });
        }
 	}
-	 
-	private final boolean assertControlsExist(){
+
+	/**
+	 * Part of initialization, be sure to add to this when components are added/removed
+	 * @return returns true if all passed
+	 */
+	private final void assertControlsExist(){
 		assert findPatientButton != null; 
 		assert addAppointmentsButton != null;
 		assert findAppointmentsButton != null;
 		assert addPatientButton != null;
 		assert exportResultsButton != null;
-		assert notesButton != null;
-		assert diagramButton != null;
+	//	assert notesButton != null;
+	//	assert diagramButton != null;
 		assert welcomePane != null;
 		assert cameraPane != null;
-		assert findPatientPane != null;
-				
-		return true;
+		assert findPatientPane != null;				
+	}
+	
+	private final void setOnActions(HashMap<Button, VBox> hMap){
+		for (Button button : hMap.keySet()){
+			((ButtonBase) button).setOnAction(this::handleButton);
+		}
 	}
 }
 
