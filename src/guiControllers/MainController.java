@@ -1,19 +1,17 @@
 package guiControllers;
-import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBase;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 //import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -32,6 +30,9 @@ public class MainController implements Controller{
 	private Pane welcomePane, cameraPane, findPatientPane;
 	//private BorderPane mainPane;
 
+    @FXML StackPane stackPane;
+    public MainController() {}//Default Constructor
+    
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		System.out.println("init");
@@ -45,70 +46,19 @@ public class MainController implements Controller{
 		
 	}
 	
-	public void mouseClicked(MouseEvent e) {
-		System.out.println("Into MouseClicked");
-		//https://blogs.oracle.com/jmxetc/entry/connecting_scenebuilder_edited_fxml_to
-		//http://stackoverflow.com/questions/29735703/how-to-make-fxml-generated-buttons-work
-		if (e.getSource() == findPatientButton){System.out.println("HELLO"); changeMainPane(findPatientPane.getId());}
-		if (e.getSource() == addAppointmentsButton){changeMainPane(welcomePane.getId());System.out.println("HELLO");}
-		if (e.getSource() ==  findAppointmentsButton){}
-		if (e.getSource() ==  addPatientButton){}			
-		if (e.getSource() ==  exportResultsButton){} 			
-	//	if (e.getSource() ==  notesButton){}	
-	//	if (e.getSource() ==  diagramButton){}			
-	}
-	
-
-	
-	 public void handleButton(ActionEvent event) {
-	     //Button was clicked, do something...
-		if (event.getSource() == findPatientButton){changeMainPane(findPatientPane.getId());}
-		if (event.getSource() == addAppointmentsButton){changeMainPane(welcomePane.getId());System.out.println("HELLO");}
+	 public void handleButton(ActionEvent event) throws IOException {
+		if (event.getSource() == findPatientButton){
+			cameraPane.toFront();
+		
+		}	
+	    //	if (event.getSource() == addAppointmentsButton){changeMainPane(welcomePane.getId());System.out.println("HELLO");}
 		if (event.getSource() ==  findAppointmentsButton){}
 		if (event.getSource() ==  addPatientButton){}				
 		if (event.getSource() ==  exportResultsButton){} 			
 		//if (event.getSource() ==  notesButton){}	
-		//	if (e.getSource() ==  diagramButton){}	
+		//if (e.getSource() ==  diagramButton){}	
 	 }
 	 	
-	/**
-	 * Changes the main "central" panes contents
-	 * @param path
-	 */
-	private final void changeMainPane(String id) {
-        try {
-        	FXMLLoader newMainPane = FXMLLoader.load(getClass().getResource(id));  
-        	//content.getChildren().setAll(FXMLLoader.load("vista2.fxml"));
-            //http://stackoverflow.com/questions/18619394/loading-new-fxml-in-the-same-scene
-        	//here now
-        } 
-        catch (Exception e) {
-            System.out.println(e.toString());
-        }	
-	}
-	
-	/**
-	 * Links Buttons to their respective central panes.
-	 * @param buttonPaneHM A hashmap of buttons and their respective panes. 
-	 */
-	private final void buttonLinker(HashMap buttonPaneHM)	{		
-		for (Object button : buttonPaneHM.keySet()) {
-	        ((ButtonBase) button).setOnAction(new EventHandler<ActionEvent>() {
-	            @Override
-	            public void handle(ActionEvent event) {
-	                ((ButtonBase) button).setOnAction(new EventHandler<ActionEvent>() {
-	                    @Override
-	                    public void handle(ActionEvent event) {
-	                    VBox connectedVbox = (VBox)buttonPaneHM.get(button);                    
-	                    Stage stage = (Stage) connectedVbox.getScene().getWindow(); //does this close too much? get child nodes?
-	                    stage.close();
-	                    changeMainPane(connectedVbox.idProperty().toString());
-	                    }       
-	            });}
-        });
-       }
-	}
-
 	/**
 	 * Part of initialization, be sure to add to this when components are added/removed
 	 * @return returns true if all passed
@@ -119,16 +69,26 @@ public class MainController implements Controller{
 		assert findAppointmentsButton != null;
 		assert addPatientButton != null;
 		assert exportResultsButton != null;
-	//	assert notesButton != null;
-	//	assert diagramButton != null;
+//		assert notesButton != null;
+//		assert diagramButton != null;
 		assert welcomePane != null;
 		assert cameraPane != null;
 		assert findPatientPane != null;				
 	}
 	
+	/**
+	 * Sets buttons linked panes onAction methods.
+	 * @param hMap Button and linked pane
+	 */
 	private final void setOnActions(HashMap<Button, Pane> hMap){
 		for (Button button : hMap.keySet()){
-			((ButtonBase) button).setOnAction(this::handleButton);
+			((ButtonBase) button).setOnAction(arg0 -> {
+				try {
+					handleButton(arg0);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			});
 		}
 	}
 }
