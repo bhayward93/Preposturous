@@ -1,106 +1,79 @@
 package guiControllers;
-import java.awt.Window;
+import java.awt.Dimension;
 import java.io.IOException;
 import java.net.URL;
-import java.rmi.server.ServerCloneException;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
-import javax.swing.RootPaneContainer;
-import javax.swing.text.AsyncBoxView.ChildLocator;
+import org.omg.CORBA.PRIVATE_MEMBER;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBase;
+import javafx.scene.control.TabPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-//import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
+import javafx.stage.Window;
+import utils.utils;
 
 /**
  * Controller of the main screen of the GUI.
  * @author Ben Hayward
  */
 public class MainController implements Controller{
-    HashMap<Button, Pane> buttonsPaneHMap = new HashMap<>(); //storing the data in a HashMap to create a link between types
-
     //Add updates to assertControllerExists() manually.
     @FXML 
     private Button findPatientButton, addAppointmentsButton, findAppointmentsButton, 
 	addPatientButton, exportResultsButton; // need to be handled separate: notesButton, diagramButton;
-	
-    @FXML
-	private Pane welcomePane, cameraPane, findPatientPane;
-	//private BorderPane mainPane;
+    @FXML private Pane welcomePane, cameraPane, findPatientPane;
+    @FXML private BorderPane mainWindow;
+    @FXML private StackPane stackPane; 
+    @FXML private TabPane tabPane;
+    @FXML private VBox buttonBar;
+    HashMap<Button, Pane> buttonsPaneHMap = new HashMap<>(); //storing the data in a HashMap to create a link between types
 
-    @FXML Group group;
-    
-    @FXML BorderPane mainWindow;
-    
-    @FXML StackPane centralStackPane;
-    
     public MainController() {}//Default Constructor
     
     
     
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		System.out.println("Initializing");
+ 		System.out.println("Initializing");
 		assertControlsExist();
+		 mainWindow.setCenter(welcomePane);
 		
-		buttonsPaneHMap.put(findPatientButton, findPatientPane);
-		buttonsPaneHMap.put(findPatientButton, cameraPane);
+	     setOnActions(buttonsPaneHMap);
+		 
+//		 primaryStage.setX(utils.getScreenBounds().getWidth()); 
+//		 primaryStage.setY(utils.getScreenBounds().getHeight());
+//		 primaryStage.setWidth(utils.getScreenBounds().getWidth());
+//		 primaryStage.setHeight(utils.getScreenBounds().getHeight());
 		
-		setOnActions(buttonsPaneHMap);
-		mainWindow.setCenter(welcomePane);
-		System.out.println("Finished initialization");
+		 System.out.println("Finished initialization");
 		
 	}
 	
 	 public void handleButton(ActionEvent event) throws IOException {
-		if (event.getSource() == findPatientButton){
-			Node source = (Node) event.getSource();
-			javafx.stage.Window thisStage = source.getScene().getWindow();
-		    BorderPane root = FXMLLoader.load(getClass().getResource("/FXML/Main.fxml"));
-		//    root.getCenter().//.lookup("")
-		    try {
-
-		    	for(Node childNodes : centralStackPane.getChildren()){
-		    		if(!childNodes.isDisable()){
-		    			childNodes.setDisable(true);
-		    		}
-		    		cameraPane.setDisable(false);
-		    		cameraPane.setVisible(true);		   	
-		    	}
-		    } catch (Exception e) {
-		    	e.printStackTrace();
-		    }
-		    
-		   
-
-//			mainWindow.setCenter(cameraPane);
-//			cameraPane.setVisible(true);
-//			welcomePane.setVisible(false);
-		}	
-//			if (event.getSource() == 			addAppointmentsButton){changeMainPane(welcomePane.getId());System.out.println("HELLO");}
-		if (event.getSource() ==  findAppointmentsButton){
-
-		}
-		if (event.getSource() ==  addPatientButton){}				
-		if (event.getSource() ==  exportResultsButton){} 			
-		//if (event.getSource() ==  notesButton){}	
-		//if (e.getSource() ==  diagramButton){}	
+		 
+		 AnchorPane newCenter = FXMLLoader.load(getClass().getResource("/FXML/cameraPane.fxml"));
+		 this.mainWindow.setCenter(newCenter); 
+		 
+//		if (event.getSource() ==  addPatientButton){}				
+//		if (event.getSource() ==  exportResultsButton){} 			
+//		if (event.getSource() ==  notesButton){}	
+//		if (e.getSource() ==  diagramButton){}	
 	 }
 	 	
 	/**
-	 * Part of initialization, be sure to add to this when components are added/removed
+	 * Part of initialisation, be sure to add to this when components are added/removed
 	 * @return returns true if all passed
 	 */
 	private final void assertControlsExist(){
@@ -113,7 +86,8 @@ public class MainController implements Controller{
 //		assert diagramButton != null;
 		assert welcomePane != null;
 		assert cameraPane != null;
-		assert findPatientPane != null;				
+		assert findPatientPane != null;	
+		assert stackPane != null;  
 	}
 	
 	/**
@@ -130,8 +104,32 @@ public class MainController implements Controller{
 				}
 			});
 		}
+		
 	}
+	/**
+	 * Makes the window match the maximum screen bounds.
+	 */
+	private final void makeFullScreen(){
+		 Scene primaryScene = mainWindow.getScene();
+
+		 mainWindow.setMaxHeight(primaryScene.getHeight());
+		 mainWindow.setMinHeight(primaryScene.getHeight());
+		 mainWindow.setMaxWidth(primaryScene.getWidth());
+		 mainWindow.setMinWidth(primaryScene.getWidth());
+	}
+	
+	/**
+	 * Helps with button management
+	 */
+	private final void putButtonsInHashMap(){
+		 buttonsPaneHMap.put(findPatientButton, findPatientPane);
+		 buttonsPaneHMap.put(findPatientButton, cameraPane);
+	}
+	
+	
+	
 }
+
 
 
 

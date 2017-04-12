@@ -2,24 +2,23 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainWindow" prefHeight="400.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiControllers.MainController">
+<BorderPane fx:id="mainWindow" prefHeight="461.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiControllers.MainController">
    <top>
       <Pane id="body" prefHeight="96.0" prefWidth="658.0" style="-fx-background-color: #243242; -fx-border-color: #0E141B; -fx-border-radius: 3;" stylesheets="@application.css" BorderPane.alignment="CENTER">
          <children>
@@ -33,75 +32,47 @@
                   <Image url="@../Res/mhlogo.png" />
                </image>
             </ImageView>
-         </children></Pane>
+         </children>
+      </Pane>
    </top>
    <left>
-      <VBox alignment="TOP_CENTER" prefHeight="304.0" prefWidth="121.0" style="-fx-background-color: #2E4055; -fx-border-radius: 3; -fx-border-color: #0E141B;" BorderPane.alignment="CENTER">
+      <VBox id="buttonBar" fx:id="buttonBar" alignment="TOP_CENTER" prefHeight="365.0" prefWidth="168.0" style="-fx-background-color: #2E4055; -fx-border-radius: 3; -fx-border-color: #0E141B;" BorderPane.alignment="CENTER">
          <children>
             <Pane prefHeight="31.0" prefWidth="98.0">
                <children>
-                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Res/magnifying-glass.png" />
-                     </image>
-                  </ImageView>
-                  <TextField layoutX="26.0" layoutY="2.0" opacity="0.91" prefHeight="27.0" prefWidth="92.0" style="-fx-border-radius: 20; -fx-border-color: #000000; -fx-background-color: #0E141B;" text=" Search">
-                     <effect>
-                        <Blend opacity="0.0" />
-                     </effect>
-                  </TextField>
+                  <Pane layoutX="-1.0" layoutY="-2.0" prefHeight="33.0" prefWidth="169.0" style="-fx-background-color: #565656; -fx-border-color: #0E141B;">
+                     <children>
+                        <ImageView fitHeight="23.0" fitWidth="24.0" layoutX="2.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Res/magnifying-glass.png" />
+                           </image>
+                        </ImageView>
+                        <TextField layoutX="29.0" layoutY="2.0" prefHeight="0.0" prefWidth="134.0" style="-fx-border-radius: 1; -fx-border-color: #111111; -fx-border-width: 2; -fx-background-color: #FFFFFF;" styleClass="stop-color-leaking" stylesheets="@../cSS/application.css" />
+                     </children>
+                  </Pane>
                </children>
             </Pane>
-            <Button id="findPatientButton" fx:id="findPatientButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Find Patient" />
-            <Button id="addAppointmentsButton" fx:id="addAppointmentsButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Add Appointments" />
-            <Button id="findAppointmentsButton" fx:id="findAppointmentButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Find Appointment" />
-            <Button id="addPatientButton" fx:id="addPatientButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Add Patient" />
-            <Button id="exportResultsButton" fx:id="exportResultsButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Export Results" />
-            <Pane prefHeight="63.0" prefWidth="98.0" />
-            <ImageView fx:id="settingsButton" fitHeight="29.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Res/settings.png" />
-               </image>
-            </ImageView>
+            <Button id="findPatientButton" fx:id="findPatientButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="171.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Find Patient" />
+            <Button id="addAppointmentsButton" fx:id="addAppointmentsButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="202.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Add Appointments" />
+            <Button id="findAppointmentsButton" fx:id="findAppointmentsButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="201.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Find Appointment" />
+            <Button id="addPatientButton" fx:id="addPatientButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="194.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Add Patient" />
+            <Button id="exportResultsButton" fx:id="exportResultsButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="190.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Export Results" />
+            <AnchorPane prefHeight="182.0" prefWidth="166.0">
+               <children>
+                  <ImageView id="settingsButton" fitHeight="38.0" fitWidth="48.0" layoutX="64.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Res/settings.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
    </left>
-   <right>
-      <Pane prefHeight="304.0" prefWidth="146.0" style="-fx-background-color: #2E4055; -fx-border-radius: 3; -fx-border-color: #0E141B;" BorderPane.alignment="CENTER">
-         <children>
-            <TabPane focusTraversable="false" layoutX="1.0" layoutY="1.0" prefHeight="306.0" prefWidth="143.0" rotateGraphic="true" style="-fx-background-color: # #414760;" styleClass="tab-header-background" tabClosingPolicy="UNAVAILABLE">
-              <tabs>
-                <Tab fx:id="notesButton" text="Notes">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: #414760; -fx-background-radius: 3;" styleClass="tab-header-background" stylesheets="@../application/CSS/application.css" />
-                  </content>
-                </Tab>
-                <Tab fx:id="diagramButton" closable="false" text="Diagram" />
-                  <Tab text="Untitled Tab">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                    </content>
-                  </Tab>
-              </tabs>
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-               <stylesheets>
-                  <URL value="@application.css" />
-                  <URL value="@../application/CSS/application.css" />
-               </stylesheets>
-            </TabPane>
-         </children></Pane>
-   </right>
    <center>
-      <Group fx:id="group" BorderPane.alignment="CENTER">
+      <StackPane id="stackPane" fx:id="stackPane" BorderPane.alignment="CENTER">
          <children>
-            <VBox fx:id="welcomePane" prefHeight="304.0" prefWidth="391.0" style="-fx-background-color: #414760;">
-               <children>
-                  <Pane fx:id="welcomePane" prefHeight="313.0" prefWidth="391.0" style="-fx-background-color: #414760;" />
-               </children>
-            </VBox>
-            <VBox fx:id="findPatientPane" prefHeight="305.0" prefWidth="391.0" visible="false">
+            <VBox fx:id="findPatientPane" disable="true" prefHeight="305.0" prefWidth="391.0" visible="false">
                <children>
                   <Pane prefHeight="316.0" prefWidth="391.0" style="-fx-background-color: #414760; -fx-border-radius: 3; -fx-border-color: #0E141B;">
                      <children>
@@ -110,7 +81,39 @@
                   </Pane>
                </children>
             </VBox>
-            <VBox fx:id="cameraPane" alignment="CENTER" prefHeight="305.0" prefWidth="391.0" visible="false">
+            <VBox fx:id="welcomePane" prefHeight="304.0" prefWidth="391.0" style="-fx-background-color: #414760;">
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <Pane fx:id="welcomePane" prefHeight="313.0" prefWidth="391.0" style="-fx-background-color: #414760;">
+                           <children>
+                              <ImageView fitHeight="183.0" fitWidth="296.0" layoutX="14.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Res/welcomepane.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="141.0" layoutY="14.0" text="Welcome" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="33.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="82.0" layoutY="53.0" prefHeight="68.0" prefWidth="346.0" text="To start, please select an" textFill="WHITE" textOverrun="CLIP">
+                                 <font>
+                                    <Font name="Calibri" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="82.0" layoutY="80.0" prefHeight="68.0" prefWidth="346.0" text="option from the left." textFill="WHITE" textOverrun="CLIP">
+                                 <font>
+                                    <Font name="Calibri" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <VBox fx:id="cameraPane" alignment="CENTER" disable="true" prefHeight="305.0" prefWidth="391.0" visible="false">
                <children>
                   <ToolBar prefHeight="39.0" prefWidth="381.0" style="-fx-background-color: #414760; -fx-border-radius: 3; -fx-border-color: #0E141B;">
                     <items>
@@ -128,7 +131,33 @@
                   </Pane>
                </children>
             </VBox>
+            <VBox id="addAppointmentsPane" fx:id="addAppointmentsPane" prefHeight="200.0" prefWidth="100.0" />
+            <VBox fx:id="findAppointmentPane" prefHeight="200.0" prefWidth="100.0" />
+            <VBox fx:id="addPatientPane" prefHeight="200.0" prefWidth="100.0" />
+            <VBox fx:id="exportResultsPane" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <VBox fx:id="settingsPane" prefHeight="200.0" prefWidth="100.0" />
+               </children></VBox>
          </children>
-      </Group>
+      </StackPane>
    </center>
+   <right>
+      <TabPane id="tabPane" fx:id="tabPane" focusTraversable="false" prefHeight="365.0" prefWidth="166.0" rotateGraphic="true" style="-fx-background-color: # #414760;" styleClass="tab-header-background" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="notesTab" text="Notes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="216.0" style="-fx-border-color: #414760; -fx-background-radius: 3;" styleClass="tab-header-background" stylesheets="@../application/CSS/application.css" />
+            </content>
+          </Tab>
+          <Tab fx:id="diagramTab" closable="false" text="Diagram" />
+        </tabs>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <stylesheets>
+            <URL value="@application.css" />
+            <URL value="@../application/CSS/application.css" />
+         </stylesheets>
+      </TabPane>
+   </right>
 </BorderPane>
