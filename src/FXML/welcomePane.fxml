@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+
+            <VBox fx:id="welcomePane" prefHeight="304.0" prefWidth="391.0" style="-fx-background-color: #414760;">
+               <children>
+                  <Pane fx:id="welcomePane" prefHeight="313.0" prefWidth="428.0" style="-fx-background-color: #414760;">
+                     <children>
+                        <ImageView fitHeight="183.0" fitWidth="296.0" layoutX="14.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Res/welcomepane.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="141.0" layoutY="14.0" text="Welcome" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="33.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="82.0" layoutY="53.0" prefHeight="68.0" prefWidth="346.0" text="To start, please select an" textFill="WHITE" textOverrun="CLIP">
+                           <font>
+                              <Font name="Calibri" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="82.0" layoutY="80.0" prefHeight="68.0" prefWidth="346.0" text="option from the left." textFill="WHITE" textOverrun="CLIP">
+                           <font>
+                              <Font name="Calibri" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
