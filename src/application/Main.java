@@ -11,6 +11,7 @@ public class Main extends Application {
 	
 	double screenHeight = utils.getScreenBounds().getHeight();
     double screenWidth  = utils.getScreenBounds().getWidth();
+    
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -18,11 +19,8 @@ public class Main extends Application {
 			Scene scene = new Scene(root,658,401);			
 			scene.getStylesheets().add(getClass().getResource("/cSS/application.css").toExternalForm());
 			primaryStage.setHeight(screenHeight - (screenHeight/5));
-			primaryStage.setWidth(screenWidth - (screenWidth/5));			
-			
+			primaryStage.setWidth(screenWidth - (screenWidth/5));					
 			primaryStage.setScene(scene);
-			
-			
 			primaryStage.show();	
 		} catch(Exception e) {
 			e.printStackTrace();

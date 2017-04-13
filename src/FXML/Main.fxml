@@ -7,15 +7,12 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="mainWindow" prefHeight="461.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiControllers.MainController">
@@ -40,14 +37,14 @@
          <children>
             <Pane prefHeight="31.0" prefWidth="98.0">
                <children>
-                  <Pane layoutX="-1.0" layoutY="-2.0" prefHeight="33.0" prefWidth="169.0" style="-fx-background-color: #565656; -fx-border-color: #0E141B;">
+                  <Pane layoutX="-1.0" layoutY="-2.0" prefHeight="33.0" prefWidth="169.0" style="-fx-background-color: #565656; -fx-border-color: #000000; -fx-border-radius: 20; -fx-background-radius: 20;">
                      <children>
-                        <ImageView fitHeight="23.0" fitWidth="24.0" layoutX="2.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="19.0" fitWidth="18.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Res/magnifying-glass.png" />
                            </image>
                         </ImageView>
-                        <TextField layoutX="29.0" layoutY="2.0" prefHeight="0.0" prefWidth="134.0" style="-fx-border-radius: 1; -fx-border-color: #111111; -fx-border-width: 2; -fx-background-color: #FFFFFF;" styleClass="stop-color-leaking" stylesheets="@../cSS/application.css" />
+                        <TextField layoutX="29.0" layoutY="2.0" prefHeight="0.0" prefWidth="134.0" style="-fx-border-radius: 1; -fx-border-color: #111111; -fx-border-width: 2; -fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20;" styleClass="stop-color-leaking" stylesheets="@../cSS/application.css" />
                      </children>
                   </Pane>
                </children>
@@ -69,78 +66,6 @@
          </children>
       </VBox>
    </left>
-   <center>
-      <StackPane id="stackPane" fx:id="stackPane" BorderPane.alignment="CENTER">
-         <children>
-            <VBox fx:id="findPatientPane" disable="true" prefHeight="305.0" prefWidth="391.0" visible="false">
-               <children>
-                  <Pane prefHeight="316.0" prefWidth="391.0" style="-fx-background-color: #414760; -fx-border-radius: 3; -fx-border-color: #0E141B;">
-                     <children>
-                        <Button fx:id="submitButton1" layoutX="245.0" layoutY="264.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Submit &amp; Continue" />
-                     </children>
-                  </Pane>
-               </children>
-            </VBox>
-            <VBox fx:id="welcomePane" prefHeight="304.0" prefWidth="391.0" style="-fx-background-color: #414760;">
-               <children>
-                  <AnchorPane>
-                     <children>
-                        <Pane fx:id="welcomePane" prefHeight="313.0" prefWidth="391.0" style="-fx-background-color: #414760;">
-                           <children>
-                              <ImageView fitHeight="183.0" fitWidth="296.0" layoutX="14.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../Res/welcomepane.png" />
-                                 </image>
-                              </ImageView>
-                              <Label layoutX="141.0" layoutY="14.0" text="Welcome" textFill="WHITE">
-                                 <font>
-                                    <Font name="Calibri Bold" size="33.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="82.0" layoutY="53.0" prefHeight="68.0" prefWidth="346.0" text="To start, please select an" textFill="WHITE" textOverrun="CLIP">
-                                 <font>
-                                    <Font name="Calibri" size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="82.0" layoutY="80.0" prefHeight="68.0" prefWidth="346.0" text="option from the left." textFill="WHITE" textOverrun="CLIP">
-                                 <font>
-                                    <Font name="Calibri" size="24.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </VBox>
-            <VBox fx:id="cameraPane" alignment="CENTER" disable="true" prefHeight="305.0" prefWidth="391.0" visible="false">
-               <children>
-                  <ToolBar prefHeight="39.0" prefWidth="381.0" style="-fx-background-color: #414760; -fx-border-radius: 3; -fx-border-color: #0E141B;">
-                    <items>
-                      <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="91.0" style="-fx-background-color: #F89A2F; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Posterior" />
-                        <Button mnemonicParsing="false" prefWidth="91.0" style="-fx-background-color: #5ABC8D; -fx-border-radius: 3; -fx-border-color: #0E141B;" text="Lateral (L)" />
-                        <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="91.0" style="-fx-background-color: #D75E3F; -fx-border-radius: 3; -fx-border-color: #0E141B;" text="Anterior" />
-                        <Button mnemonicParsing="false" prefWidth="91.0" style="-fx-background-color: #D75E3F; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Lateral (R)" />
-                    </items>
-                  </ToolBar>
-                  <Pane prefHeight="316.0" prefWidth="391.0" style="-fx-background-color: #414760; -fx-border-radius: 3; -fx-border-color: #0E141B;">
-                     <children>
-                        <Circle fill="#d75e3f" layoutX="196.0" layoutY="191.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Button fx:id="submitButton" layoutX="126.0" layoutY="213.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Submit &amp; Continue" />
-                     </children>
-                  </Pane>
-               </children>
-            </VBox>
-            <VBox id="addAppointmentsPane" fx:id="addAppointmentsPane" prefHeight="200.0" prefWidth="100.0" />
-            <VBox fx:id="findAppointmentPane" prefHeight="200.0" prefWidth="100.0" />
-            <VBox fx:id="addPatientPane" prefHeight="200.0" prefWidth="100.0" />
-            <VBox fx:id="exportResultsPane" prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <VBox fx:id="settingsPane" prefHeight="200.0" prefWidth="100.0" />
-               </children></VBox>
-         </children>
-      </StackPane>
-   </center>
    <right>
       <TabPane id="tabPane" fx:id="tabPane" focusTraversable="false" prefHeight="365.0" prefWidth="166.0" rotateGraphic="true" style="-fx-background-color: # #414760;" styleClass="tab-header-background" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
@@ -160,4 +85,8 @@
          </stylesheets>
       </TabPane>
    </right>
+   <center>
+      <AnchorPane id="centerAP" fx:id="centerAP" BorderPane.alignment="CENTER">
+      </AnchorPane>
+   </center>
 </BorderPane>
