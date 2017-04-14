@@ -1,16 +1,24 @@
 package guiControllers;
 import java.io.IOException;
 import java.net.URL;
+import java.security.PrivilegedActionException;
 import java.util.HashMap;
 import java.util.ResourceBundle;
+import java.util.Set;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBase;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
@@ -27,14 +35,14 @@ public class MainController implements Controller{
     @FXML 
     private Button findPatientButton, addAppointmentsButton, findAppointmentsButton, 
 				   addPatientButton, exportResultsButton; // need to be handled separate: notesButton, diagramButton;
-    @FXML private Pane welcomePane, cameraPane, findPatientPane, addPatientPane, 
-    				   addAppointmentsPane, exportResultsPane, findAppointmentsPane;
+    @FXML private Pane  welcomePane;
+    //welcomePane, cameraPane, findPatientPane, addPatientPane, 
+  //  				   addAppointmentsPane, exportResultsPane, findAppointmentsPane;
     @FXML private BorderPane mainWindow;
-    @FXML private StackPane stackPane; 
     @FXML private TabPane tabPane;
     @FXML private VBox buttonBar;
     @FXML private AnchorPane centerAP;
-    HashMap<Button, Pane> buttonsPaneHMap = new HashMap<>(); //storing the data in a HashMap to create a link between types
+    @FXML private Tab notesTab, diagramTab;
 
     public MainController() {
     	//Default Constructor
@@ -42,122 +50,129 @@ public class MainController implements Controller{
   
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		putNodesInHashMap();
+//		putNodesInHashMap();
 		assertControlsExist();
-		mainWindow.setCenter(welcomePane);
-		setOnActions(buttonsPaneHMap);	
+		setOnActions();
 		try {
-			loadWelcomePane();
-		} catch (IOException e) {
+			loadWelcomePane(null);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-	/**
-	 * Handles any button presses.
-	 */
-	public final void handleButton(ActionEvent event) throws IOException {
-		Node newCenter = new AnchorPane();	
-		
-		if (event.getSource() ==  addAppointmentsButton){
-			loadAddAppointmentsPane();		}	
-		if (event.getSource() ==  addPatientButton){
-			newCenter = FXMLLoader.load(getClass().getResource("/FXML/AddPatientPane.fxml"));
-		}				
-		if (event.getSource() ==  findAppointmentsButton){
-			newCenter = FXMLLoader.load(getClass().getResource("/FXML/FindAppointmentsPane.fxml"));
-		}				
-		if (event.getSource() ==  exportResultsButton){
-			newCenter = FXMLLoader.load(getClass().getResource("/FXML/ExportResultsPane.fxml"));
-		} 
-		if (event.getSource() ==  findPatientPane){
-			newCenter = FXMLLoader.load(getClass().getResource("/FXML/FindPatientPane.fxml"));
-		}				
-//		 
-//		try{
-//			this.mainWindow.setCenter(newCenter); 
-//			centerAP.getChildren().clear();
-//	        centerAP.getChildren().add(newCenter);//add new display
-//		 }
-//		 catch (NullPointerException e){
-//			 e.printStackTrace();
-//		 }	 
-//		 if (event.getSource() ==  notesButton){}	
-//		 if (e.getSource() ==  diagramButton){}	
-	 }
 	 
 	/**
-	 * Part of initialisation, be sure to add to this when components are added/removed
+	 * Part of initialisation, be sure to add to this when components are added/removed. Style taken from 
+	 * https://blogs.oracle.com/jmxetc/entry/connecting_scenebuilder_edited_fxml_to
 	 * @return returns true if all passed
 	 */
 	public final void assertControlsExist(){
-		assert findPatientButton != null; 
-		assert addAppointmentsButton != null;
-		assert findAppointmentsButton != null;
-		assert addPatientButton != null;
-		assert exportResultsButton != null;
-//		assert notesButton != null;
-//		assert diagramButton != null;
-		assert welcomePane != null;
-		assert cameraPane != null;
-		assert findPatientPane != null;	
-		assert stackPane != null;
-		assert centerAP != null;
+		assert findPatientButton != null  : "fx:id=\"findPatientButton\" was not injected: check your FXML file 'simple.fxml'.";; 
+		assert addAppointmentsButton != null : "fx:id=\"addAppointmentsButton\" was not injected: check your FXML file 'simple.fxml'.";;
+		assert findAppointmentsButton != null : "fx:id=\"findAppointmentsButton\" was not injected: check your FXML file 'simple.fxml'.";;
+		assert addPatientButton != null : "fx:id=\"addPatientButton\" was not injected: check your FXML file 'simple.fxml'.";;
+		assert exportResultsButton != null : "fx:id=\"exportResultsButton\" was not injected: check your FXML file 'simple.fxml'.";;
+		assert notesTab != null : "fx:id=\"notesTab\" was not injected: check your FXML file 'simple.fxml'.";;
+		assert diagramTab != null : "fx:id=\"diagramTab\" was not injected: check your FXML file 'simple.fxml'.";;
+		assert welcomePane != null : "fx:id=\"welcomePane\" was not injected: check your FXML file 'simple.fxml'.";;
+		assert centerAP != null : "fx:id=\"centerAP\" was not injected: check your FXML file 'simple.fxml'.";;
+//		assert addAppointmentsPane!=null;
+//		assert findAppointmentsPane!=null;
+//		assert addPatientPane!=null;
+//		assert exportResultsPane!=null;
 	}
-	
-	/**
-	 * Sets buttons linked panes onAction methods.
-	 * @param hMap Button and linked pane
-	 */
 
-	//Not entirely my code
-	public final void setOnActions(HashMap<Button, Pane> hMap){
-		for (Button button : hMap.keySet()){
-			((ButtonBase) button).setOnAction(arg0 -> {
-				try {
-					handleButton(arg0);
-				} 
-				catch (Exception e) {
-					e.printStackTrace();
-				}
-			});
-		}		
-	}
+	
 
 	/**
 	 * Helps with button management. This currently needs to be done manually.
 	 */
-	public final void putNodesInHashMap(){
-		 buttonsPaneHMap.put(addAppointmentsButton, addAppointmentsPane);
-		 buttonsPaneHMap.put(addPatientButton, addPatientPane);
-		 buttonsPaneHMap.put(exportResultsButton, exportResultsPane);
-		 buttonsPaneHMap.put(findAppointmentsButton, findAppointmentsPane);
-		 buttonsPaneHMap.put(findPatientButton, findPatientPane);
-	}
+//	public final void putNodesInHashMap(){
+//		 buttonsPaneHMap.put(addAppointmentsButton, addAppointmentsPane);
+//		 buttonsPaneHMap.put(addPatientButton, addPatientPane);
+//		 buttonsPaneHMap.put(exportResultsButton, exportResultsPane);
+//		 buttonsPaneHMap.put(findAppointmentsButton, findAppointmentsPane);
+//		 buttonsPaneHMap.put(findPatientButton, findPatientPane);
+//	}
 	
-	public final void clearCenterNode(){
+	public void clearCenterNode(){
 		this.centerAP.getChildren().clear();	   
 	}	
 	
-	private final void loadAddAppointmentsPane() throws IOException{
-		try {
-	        centerAP.getChildren().remove(0);
-			AnchorPane newCenter = FXMLLoader.load(getClass().getResource("/FXML/AddAppointmentsPane.fxml"));
-			mainWindow.getChildren().add(newCenter); //maybe this 
-		} catch (Exception e) {
-			e.printStackTrace();		
-		}
-
+	@FXML
+	public void loadAddAppointmentsPane(ActionEvent e){
+		loadPane("/FXML/AddAppointmentsPane.fxml");
 	}
 	
-	private final void loadWelcomePane() throws IOException{
+	@FXML
+	private void loadWelcomePane(ActionEvent e){ //private so it can only be loaded from this class.
+		loadPane("/FXML/welcomePane.fxml");
+	}
+	
+	@FXML
+	public void loadAddPatientPane(ActionEvent e){ //may need changing to patients
+		loadPane("/FXML/AddPatientPane.fxml");
+	}
+	@FXML
+	public void loadFindAppointmentsPane(ActionEvent e){
+		loadPane("/FXML/FindAppointmentsPane.fxml");
+	}
+	
+	@FXML
+	public void loadExportResultsPane(ActionEvent e){
+		loadPane("/FXML/ExportResultsPane.fxml");
+	}
+	@FXML
+	public void loadFindPatientPane(ActionEvent e){
+		loadPane("/FXML/findPatientPane.fxml");
+	}
+	
+	private final void loadPane(String fxmlPath){	
 		try {
-			centerAP.getChildren().remove(0);
-			AnchorPane newCenter = FXMLLoader.load(getClass().getResource("welcomePane.fxml"));
-			mainWindow.getChildren().add(newCenter); //maybe this 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+				try {
+					if(centerAP.getChildren().size() > 0) {
+						centerAP.getChildren().remove(0);
+						System.out.println("hi");
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				AnchorPane newCenter = FXMLLoader.load(getClass().getResource(fxmlPath));
+				System.out.println("Trying to open: "+fxmlPath);
+				mainWindow.setCenter(newCenter); //maybe this 
+			} catch (Exception e) {
+				e.printStackTrace();		
+			}
+	}
+
+
+	@Override
+	public void setOnActions() {		
+		findPatientButton.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override public void handle(ActionEvent e) {
+		    	System.out.println("check1");
+		    	loadFindPatientPane(e);
+		    }});
+		
+		addPatientButton.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override public void handle(ActionEvent e) {
+		    	System.out.println("check1");
+		    	loadAddPatientPane(e);
+		    }});
+       
+		findAppointmentsButton.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override public void handle(ActionEvent e) {
+		    	loadFindAppointmentsPane(e);
+		    }});
+		addAppointmentsButton.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override public void handle(ActionEvent e) {
+		    	loadAddAppointmentsPane(e);
+		    }});
+		exportResultsButton.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override public void handle(ActionEvent e) {
+		    	loadExportResultsPane(e);
+		    }});
+		//, addAppointmentsButton, findAppointmentsButton, 
+		//, exportResultsButton;
 	}
 }
 

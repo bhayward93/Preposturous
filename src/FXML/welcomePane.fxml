@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-            <VBox fx:id="welcomePane" prefHeight="304.0" prefWidth="391.0" style="-fx-background-color: #414760;">
-               <children>
-                  <Pane fx:id="welcomePane" prefHeight="313.0" prefWidth="428.0" style="-fx-background-color: #414760;">
-                     <children>
-                        <ImageView fitHeight="183.0" fitWidth="296.0" layoutX="14.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Res/welcomepane.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="141.0" layoutY="14.0" text="Welcome" textFill="WHITE">
-                           <font>
-                              <Font name="Calibri Bold" size="33.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="82.0" layoutY="53.0" prefHeight="68.0" prefWidth="346.0" text="To start, please select an" textFill="WHITE" textOverrun="CLIP">
-                           <font>
-                              <Font name="Calibri" size="24.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="82.0" layoutY="80.0" prefHeight="68.0" prefWidth="346.0" text="option from the left." textFill="WHITE" textOverrun="CLIP">
-                           <font>
-                              <Font name="Calibri" size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
+<AnchorPane id="welcomePane" prefHeight="534.0" prefWidth="805.0" style="-fx-background-color: #414760;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="-108.0" layoutY="-333.0" prefHeight="396.0" prefWidth="404.0" />
+            <Text layoutX="252.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="/CSS/application/css" text="Welcome to Preposturous" />
+            <Text layoutX="258.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" styleClass="/CSS/application/css" text="Please choose an option from the left" />
+            <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="230.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Res/welcomepane.png" />
+               </image>
+            </ImageView>
+   </children>
+</AnchorPane>

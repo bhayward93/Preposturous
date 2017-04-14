@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -33,9 +34,9 @@
       </Pane>
    </top>
    <left>
-      <VBox id="buttonBar" fx:id="buttonBar" alignment="TOP_CENTER" prefHeight="365.0" prefWidth="168.0" style="-fx-background-color: #2E4055; -fx-border-radius: 3; -fx-border-color: #0E141B;" BorderPane.alignment="CENTER">
+      <VBox id="buttonBar" fx:id="buttonBar" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="170.0" minWidth="170.0" prefHeight="365.0" prefWidth="170.0" style="-fx-background-color: #2E4055; -fx-border-radius: 3; -fx-border-color: #0E141B;" BorderPane.alignment="CENTER">
          <children>
-            <Pane prefHeight="31.0" prefWidth="98.0">
+            <Pane prefHeight="41.0" prefWidth="167.0">
                <children>
                   <Pane layoutX="-1.0" layoutY="-2.0" prefHeight="33.0" prefWidth="169.0" style="-fx-background-color: #565656; -fx-border-color: #000000; -fx-border-radius: 20; -fx-background-radius: 20;">
                      <children>
@@ -49,12 +50,12 @@
                   </Pane>
                </children>
             </Pane>
-            <Button id="findPatientButton" fx:id="findPatientButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="171.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Find Patient" />
-            <Button id="addAppointmentsButton" fx:id="addAppointmentsButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="202.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Add Appointments" />
-            <Button id="findAppointmentsButton" fx:id="findAppointmentsButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="201.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Find Appointment" />
-            <Button id="addPatientButton" fx:id="addPatientButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="194.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Add Patient" />
-            <Button id="exportResultsButton" fx:id="exportResultsButton" mnemonicParsing="false" onAction="#handleButton" prefHeight="31.0" prefWidth="190.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" text="Export Results" />
-            <AnchorPane prefHeight="182.0" prefWidth="166.0">
+            <Button id="findPatientButton" fx:id="findPatientButton" alignment="CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loadFindPatientPane" prefHeight="40.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" styleClass="mainFont" stylesheets="@../cSS/application.css" text="Find Patient" textOverrun="CLIP" VBox.vgrow="ALWAYS" />
+            <Button id="addAppointmentsButton" fx:id="addAppointmentsButton" alignment="CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loadAddAppointmentsPane" prefHeight="40.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" styleClass="mainFont" stylesheets="@../cSS/application.css" text="Add Appointments" VBox.vgrow="ALWAYS" />
+            <Button id="findAppointmentsButton" fx:id="findAppointmentsButton" alignment="CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loadFindAppointmentsPane" prefHeight="40.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" styleClass="mainFont" stylesheets="@../cSS/application.css" text="Find Appointment" VBox.vgrow="ALWAYS" />
+            <Button id="addPatientButton" fx:id="addPatientButton" alignment="CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loadAddPatientPane" prefHeight="40.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" styleClass="mainFont" stylesheets="@../cSS/application.css" text="Add Patient" VBox.vgrow="ALWAYS" />
+            <Button id="exportResultsButton" fx:id="exportResultsButton" alignment="CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loadExportResultsPane" prefHeight="40.0" style="-fx-background-color: #CDCDCD; -fx-border-color: #0E141B; -fx-border-radius: 3;" styleClass="mainFont" stylesheets="@../cSS/application.css" text="Export Results" VBox.vgrow="ALWAYS" />
+            <AnchorPane VBox.vgrow="ALWAYS">
                <children>
                   <ImageView id="settingsButton" fitHeight="38.0" fitWidth="48.0" layoutX="64.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -64,6 +65,9 @@
                </children>
             </AnchorPane>
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
       </VBox>
    </left>
    <right>
@@ -71,7 +75,7 @@
         <tabs>
           <Tab fx:id="notesTab" text="Notes">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="216.0" style="-fx-border-color: #414760; -fx-background-radius: 3;" styleClass="tab-header-background" stylesheets="@../application/CSS/application.css" />
+              <AnchorPane maxWidth="400.0" minHeight="0.0" minWidth="200.0" prefHeight="336.0" prefWidth="216.0" style="-fx-border-color: #414760; -fx-background-radius: 3;" styleClass="tab-header-background" stylesheets="@../application/CSS/application.css" />
             </content>
           </Tab>
           <Tab fx:id="diagramTab" closable="false" text="Diagram" />
