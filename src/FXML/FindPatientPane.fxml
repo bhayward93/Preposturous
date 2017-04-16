@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="534.0" prefWidth="805.0" style="-fx-background-color: #414760;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+<AnchorPane prefHeight="534.0" prefWidth="805.0" style="-fx-background-color: #414760;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox layoutX="-111.0" layoutY="-333.0" prefHeight="396.0" prefWidth="404.0" />
-      <Text layoutX="243.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Find Patients">
-         <font>
-            <Font size="53.0" />
-         </font>
-      </Text>
+      <ScrollPane hbarPolicy="NEVER" prefHeight="534.0" prefWidth="805.0" style="-fx-background: #414760;" stylesheets="@../cSS/middlePane.css">
+         <styleClass>
+            <String fx:value="standardBackground" />
+            <String fx:value="middlePane" />
+            <String fx:value="fonts" />
+         </styleClass>
+         <content>
+            <AnchorPane prefHeight="531.0" prefWidth="859.0" />
+         </content>
+      </ScrollPane>
    </children></AnchorPane>

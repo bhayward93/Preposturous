@@ -4,7 +4,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="534.0" prefWidth="805.0" style="-fx-background-color: #414760;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="650" prefWidth="400.0" style="-fx-background-color: #414760;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text layoutX="148.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD APPOINTMENTS">
          <font>

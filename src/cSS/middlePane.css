@@ -1,6 +1,15 @@
-.tab-pane {
-    -fx-tab-max-height: 0 ;
-} 
-.tab-pane .tab-header-area {
-    visibility: hidden ;
+.middlePane .standardBackground {
+   -fx-background: #414760;
+   -fx-border-color: #0E141B;
+   -fx-border-radius: 3;
+}
+.middlePane .fonts{
+	-fx-fill: #FFFFFF;
+	-fx-font-family: Calibri;
+}
+
+.middlePane .textBox{
+	   -fx-border-color: #0E141B;
+	   -fx-border-radius: 3;
+	   -fx-fill: #ffffff
 }
