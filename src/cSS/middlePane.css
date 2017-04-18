@@ -6,6 +6,7 @@
 .middlePane .fonts{
 	-fx-fill: #FFFFFF;
 	-fx-font-family: Calibri;
+	-fx-font-weight: bold;
 }
 	
 .middlePane .textBox{

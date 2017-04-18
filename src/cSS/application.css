@@ -7,6 +7,12 @@
 
 	
 }
+
+.basic-button{
+	-fx-border-color: #101010;
+	-fx-border-radius: 3;
+	-fx-background-radius: 10;
+}
 .stop-color-leaking {
   -fx-control-inner-background: #000000;
 }

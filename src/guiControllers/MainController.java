@@ -36,7 +36,7 @@ import javafx.scene.layout.VBox;
 public class MainController implements Controller{
     //Add updates to assertControllerExists() manually.
     @FXML 
-    private Button  addAppointmentsButton, 
+    private Button  addAppointmentsButton, startAppointmentButton,
 				   addPatientButton, exportResultsButton; // need to be handled separate: notesButton, diagramButton;
     @FXML private Pane  welcomePane;
     //welcomePane, cameraPane, findPatientPane, addPatientPane, 
@@ -102,6 +102,10 @@ public class MainController implements Controller{
 		this.centerAP.getChildren().clear();	   
 	}	
 	
+	@FXML 
+	public void loadCameraPane(ActionEvent e)	{
+		loadPane("/FXML/CameraPane.fxml");
+	}
 	@FXML
 	public void loadAddAppointmentsPane(ActionEvent e){
 		loadPane("/FXML/AddAppointmentsPane.fxml");
@@ -162,8 +166,12 @@ public class MainController implements Controller{
 		
 		addPatientButton.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
-		    	System.out.println("check1");
 		    	loadAddPatientPane(e);
+		    }});
+		
+		startAppointmentButton.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override public void handle(ActionEvent e) {
+		    	loadCameraPane(e);
 		    }});
        
 //		findAppointmentsButton.setOnAction(new EventHandler<ActionEvent>() {
