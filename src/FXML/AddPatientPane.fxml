@@ -14,18 +14,13 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane style="-fx-background-color: #414760;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #414760; -fx-border-color: #0E141B;" styleClass="standardBackground" stylesheets="@../cSS/middlePane.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefWidth="696.0" style="-fx-background: #414760;" stylesheets="@../cSS/middlePane.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <styleClass>
-            <String fx:value="standardBackground" />
-            <String fx:value="middlePane" />
-            <String fx:value="fonts" />
-         </styleClass>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefWidth="654.0" style="-fx-background: #414760;" styleClass="standardBackground" stylesheets="@../cSS/middlePane.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
-            <AnchorPane prefHeight="400.0" prefWidth="694.0">
+            <AnchorPane prefHeight="469.0" prefWidth="481.0">
                <children>
-                  <HBox fx:id="firstNameHBox" alignment="CENTER" layoutX="160.0" layoutY="22.0" prefHeight="27.0" prefWidth="168.0" AnchorPane.leftAnchor="161.0">
+                  <HBox fx:id="firstNameHBox" alignment="CENTER" layoutX="61.0" layoutY="66.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="168.0" AnchorPane.leftAnchor="61.0">
                      <children>
                         <AnchorPane>
                            <children>
@@ -38,16 +33,16 @@
                         </AnchorPane>
                         <AnchorPane>
                            <children>
-                              <TextField prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
+                              <TextField layoutX="-1.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
                            </children>
                         </AnchorPane>
                      </children>
                   </HBox>
-                  <HBox fx:id="middleNameHBox" alignment="CENTER" layoutX="160.0" layoutY="52.0" prefHeight="27.0" prefWidth="168.0">
+                  <HBox fx:id="middleNameHBox" alignment="CENTER" layoutX="59.0" layoutY="93.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="168.0">
                      <children>
                         <AnchorPane>
                            <children>
-                              <Label alignment="CENTER" layoutX="-15.0" layoutY="1.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Middle Name:">
+                              <Label alignment="CENTER" layoutX="4.0" layoutY="3.0" prefHeight="27.0" prefWidth="129.0" stylesheets="@../cSS/middlePane.css" text="Middle Name:">
                                  <font>
                                     <Font name="Calibri Bold" size="17.0" />
                                  </font>
@@ -56,16 +51,16 @@
                         </AnchorPane>
                         <AnchorPane>
                            <children>
-                              <TextField layoutY="2.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
+                              <TextField layoutX="1.0" layoutY="2.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
                            </children>
                         </AnchorPane>
                      </children>
                   </HBox>
-                  <HBox fx:id="surnameHBox" alignment="CENTER" layoutX="160.0" layoutY="82.0" prefHeight="27.0" prefWidth="168.0">
+                  <HBox fx:id="surnameHBox" alignment="CENTER" layoutX="59.0" layoutY="123.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="168.0">
                      <children>
                         <AnchorPane>
                            <children>
-                              <Label alignment="CENTER" layoutX="-15.0" layoutY="3.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text=" Surname:">
+                              <Label alignment="CENTER" layoutX="-30.0" layoutY="3.0" prefHeight="27.0" prefWidth="163.0" stylesheets="@../cSS/middlePane.css" text=" Surname:">
                                  <font>
                                     <Font name="Calibri Bold" size="17.0" />
                                  </font>
@@ -74,64 +69,65 @@
                         </AnchorPane>
                         <AnchorPane>
                            <children>
-                              <TextField layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
+                              <TextField layoutX="2.0" layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
                            </children>
                         </AnchorPane>
                      </children>
                   </HBox>
-                  <GridPane fx:id="genderGrid" layoutX="160.0" layoutY="113.0" prefWidth="300.0">
+                  <GridPane fx:id="genderGrid" layoutX="59.0" layoutY="154.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="44.0" prefWidth="375.0">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="168.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="97.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="104.0" />
                      </columnConstraints>
                      <rowConstraints>
+                        <RowConstraints />
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <RadioButton mnemonicParsing="false" text="Male" GridPane.columnIndex="1">
+                        <RadioButton mnemonicParsing="false" text="Male" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
                               <Font name="Calibri Bold" size="12.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" text="Female" GridPane.columnIndex="2">
+                        <RadioButton mnemonicParsing="false" text="Female" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <font>
                               <Font name="Calibri Bold" size="12.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" prefHeight="17.0" prefWidth="88.0" text="Transgender" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <RadioButton mnemonicParsing="false" prefHeight="17.0" prefWidth="88.0" text="Transgender" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <font>
                               <Font name="Calibri Bold" size="12.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" text="Non-binary" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <RadioButton mnemonicParsing="false" text="Non-binary" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <font>
                               <Font name="Calibri Bold" size="12.0" />
                            </font>
                         </RadioButton>
-                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="132.0" stylesheets="@../cSS/middlePane.css" text="Gender:">
+                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="172.0" stylesheets="@../cSS/middlePane.css" text="Gender:   " GridPane.rowIndex="1">
                            <font>
                               <Font name="Calibri Bold" size="17.0" />
                            </font>
                         </Label>
                      </children>
                   </GridPane>
-                  <HBox fx:id="dobHBox" layoutX="151.0" layoutY="165.0" prefWidth="300.0">
+                  <HBox fx:id="dobHBox" layoutX="59.0" layoutY="206.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="300.0">
                      <children>
                         <Label alignment="CENTER" prefHeight="27.0" prefWidth="160.0" stylesheets="@../cSS/middlePane.css" text="Date of Birth:">
                            <font>
                               <Font name="Calibri Bold" size="17.0" />
                            </font>
                         </Label>
-                        <DatePicker />
+                        <DatePicker prefHeight="25.0" prefWidth="169.0" />
                      </children>
                   </HBox>
-                  <HBox fx:id="address1HBox" alignment="CENTER" layoutX="160.0" layoutY="192.0" prefHeight="27.0" prefWidth="160.0">
+                  <HBox fx:id="address1HBox" alignment="CENTER" layoutX="59.0" layoutY="233.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="160.0">
                      <children>
                         <AnchorPane>
                            <children>
-                              <Label alignment="CENTER" layoutX="-15.0" layoutY="3.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Address Line 1:">
+                              <Label alignment="CENTER" layoutX="-5.0" layoutY="4.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Address Line 1:">
                                  <font>
                                     <Font name="Calibri Bold" size="17.0" />
                                  </font>
@@ -140,16 +136,16 @@
                         </AnchorPane>
                         <AnchorPane>
                            <children>
-                              <TextField layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
+                              <TextField layoutX="-7.0" layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
                            </children>
                         </AnchorPane>
                      </children>
                   </HBox>
-                  <HBox fx:id="address2HBox" alignment="CENTER" layoutX="160.0" layoutY="222.0" prefHeight="27.0" prefWidth="160.0">
+                  <HBox fx:id="address2HBox" alignment="CENTER" layoutX="59.0" layoutY="263.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="160.0">
                      <children>
                         <AnchorPane>
                            <children>
-                              <Label alignment="CENTER" layoutX="-15.0" layoutY="3.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Address Line 2:">
+                              <Label alignment="CENTER" layoutX="-6.0" layoutY="3.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Address Line 2:">
                                  <font>
                                     <Font name="Calibri Bold" size="17.0" />
                                  </font>
@@ -158,16 +154,16 @@
                         </AnchorPane>
                         <AnchorPane>
                            <children>
-                              <TextField layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
+                              <TextField layoutX="-6.0" layoutY="4.0" prefHeight="27.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
                            </children>
                         </AnchorPane>
                      </children>
                   </HBox>
-                  <HBox fx:id="address3HBox" alignment="CENTER" layoutX="160.0" layoutY="252.0" prefHeight="27.0" prefWidth="160.0">
+                  <HBox fx:id="address3HBox" alignment="CENTER" layoutX="59.0" layoutY="293.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="160.0">
                      <children>
                         <AnchorPane>
                            <children>
-                              <Label alignment="CENTER" layoutX="-15.0" layoutY="3.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Address Line 3:">
+                              <Label alignment="CENTER" layoutX="-6.0" layoutY="2.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Address Line 3:">
                                  <font>
                                     <Font name="Calibri Bold" size="17.0" />
                                  </font>
@@ -176,16 +172,16 @@
                         </AnchorPane>
                         <AnchorPane>
                            <children>
-                              <TextField layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
+                              <TextField layoutX="-6.0" layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
                            </children>
                         </AnchorPane>
                      </children>
                   </HBox>
-                  <HBox fx:id="townHBox" alignment="CENTER" layoutX="160.0" layoutY="282.0" prefHeight="27.0" prefWidth="160.0">
+                  <HBox fx:id="townHBox" alignment="CENTER" layoutX="59.0" layoutY="323.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="160.0">
                      <children>
                         <AnchorPane>
                            <children>
-                              <Label alignment="CENTER" layoutX="-15.0" layoutY="3.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Town:">
+                              <Label alignment="CENTER" layoutX="-36.0" layoutY="3.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Town:">
                                  <font>
                                     <Font name="Calibri Bold" size="17.0" />
                                  </font>
@@ -194,16 +190,16 @@
                         </AnchorPane>
                         <AnchorPane>
                            <children>
-                              <TextField layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
+                              <TextField layoutX="24.0" layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
                            </children>
                         </AnchorPane>
                      </children>
                   </HBox>
-                  <HBox fx:id="countryHBox" alignment="CENTER" layoutX="160.0" layoutY="312.0" prefHeight="27.0" prefWidth="160.0">
+                  <HBox fx:id="countryHBox" alignment="CENTER" layoutX="59.0" layoutY="353.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="160.0">
                      <children>
                         <AnchorPane>
                            <children>
-                              <Label alignment="CENTER" layoutX="-15.0" layoutY="3.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Country:">
+                              <Label alignment="CENTER" layoutX="-28.0" layoutY="3.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Country:">
                                  <font>
                                     <Font name="Calibri Bold" size="17.0" />
                                  </font>
@@ -212,16 +208,16 @@
                         </AnchorPane>
                         <AnchorPane>
                            <children>
-                              <TextField layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
+                              <TextField layoutX="16.0" layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
                            </children>
                         </AnchorPane>
                      </children>
                   </HBox>
-                  <HBox fx:id="postCodeHBox" alignment="CENTER" layoutX="160.0" layoutY="342.0" prefHeight="27.0" prefWidth="160.0">
+                  <HBox fx:id="postCodeHBox" alignment="CENTER" layoutX="59.0" layoutY="383.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="160.0">
                      <children>
                         <AnchorPane>
                            <children>
-                              <Label alignment="CENTER" layoutX="-15.0" layoutY="3.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Post Code:">
+                              <Label alignment="CENTER" layoutX="-20.0" layoutY="3.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Post Code:">
                                  <font>
                                     <Font name="Calibri Bold" size="17.0" />
                                  </font>
@@ -230,16 +226,16 @@
                         </AnchorPane>
                         <AnchorPane>
                            <children>
-                              <TextField alignment="CENTER" layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
+                              <TextField alignment="CENTER" layoutX="8.0" layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
                            </children>
                         </AnchorPane>
                      </children>
                   </HBox>
-                  <HBox fx:id="emailHBox" alignment="CENTER" layoutX="160.0" layoutY="372.0" prefHeight="27.0" prefWidth="160.0">
+                  <HBox fx:id="emailHBox" alignment="CENTER" layoutX="59.0" layoutY="413.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="160.0">
                      <children>
                         <AnchorPane>
                            <children>
-                              <Label alignment="CENTER" layoutX="-15.0" layoutY="3.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Email:">
+                              <Label alignment="CENTER" layoutX="-36.0" layoutY="3.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Email:">
                                  <font>
                                     <Font name="Calibri Bold" size="17.0" />
                                  </font>
@@ -248,16 +244,16 @@
                         </AnchorPane>
                         <AnchorPane>
                            <children>
-                              <TextField layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
+                              <TextField layoutX="24.0" layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
                            </children>
                         </AnchorPane>
                      </children>
                   </HBox>
-                  <HBox fx:id="phoneHBox" alignment="CENTER" layoutX="160.0" layoutY="402.0" prefHeight="27.0" prefWidth="160.0">
+                  <HBox fx:id="phoneHBox" alignment="CENTER" layoutX="59.0" layoutY="443.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="160.0">
                      <children>
                         <AnchorPane>
                            <children>
-                              <Label alignment="CENTER" layoutX="-15.0" layoutY="3.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Telephone:">
+                              <Label alignment="CENTER" layoutX="-18.0" layoutY="4.0" prefHeight="27.0" prefWidth="149.0" stylesheets="@../cSS/middlePane.css" text="Telephone:">
                                  <font>
                                     <Font name="Calibri Bold" size="17.0" />
                                  </font>
@@ -266,12 +262,12 @@
                         </AnchorPane>
                         <AnchorPane>
                            <children>
-                              <TextField layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
+                              <TextField layoutX="5.0" layoutY="4.0" prefHeight="0.0" prefWidth="239.0" style="-fx-border-color: ;" styleClass="textBox" stylesheets="@../cSS/middlePane.css" />
                            </children>
                         </AnchorPane>
                      </children>
                   </HBox>
-                  <HBox fx:id="SubmitHBox" alignment="CENTER" layoutX="452.0" layoutY="442.0" prefHeight="27.0" prefWidth="81.0">
+                  <HBox fx:id="SubmitHBox" alignment="CENTER" layoutX="59.0" layoutY="483.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="81.0">
                      <children>
                         <AnchorPane>
                            <children>
@@ -281,6 +277,10 @@
                      </children>
                   </HBox>
                </children>
+               <styleClass>
+                  <String fx:value="scroll-pane" />
+                  <String fx:value="middlePane" />
+               </styleClass>
             </AnchorPane>
          </content>
       </ScrollPane>

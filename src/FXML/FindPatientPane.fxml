@@ -1,19 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="534.0" prefWidth="805.0" style="-fx-background-color: #414760;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="534.0" prefWidth="179.0" style="-fx-background-color: #414760;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane hbarPolicy="NEVER" prefHeight="534.0" prefWidth="805.0" style="-fx-background: #414760;" stylesheets="@../cSS/middlePane.css">
+      <ScrollPane hbarPolicy="NEVER" prefHeight="534.0" prefWidth="448.0" style="-fx-background: #414760;" stylesheets="@../cSS/middlePane.css">
          <styleClass>
             <String fx:value="standardBackground" />
             <String fx:value="middlePane" />
             <String fx:value="fonts" />
          </styleClass>
          <content>
-            <AnchorPane prefHeight="531.0" prefWidth="859.0" />
+            <AnchorPane prefHeight="531.0" prefWidth="638.0">
+               <children>
+                  <HBox layoutX="40.0" layoutY="6.0" prefHeight="40.0" prefWidth="365.0">
+                     <children>
+                      <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="183.0" text="Patients" />
+                        <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="181.0" text="Appointments" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="39.0" layoutY="46.0" prefHeight="55.0" prefWidth="366.0" style="-fx-background-color: #34384c;">
+                     <children>
+                        <Label prefHeight="41.0" prefWidth="290.0" text="Name Tester" textAlignment="RIGHT">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="41.0" prefWidth="170.0" text="DoB:" textAlignment="RIGHT">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="41.0" prefWidth="208.0" text="00/00/0000" textAlignment="RIGHT">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children></AnchorPane>
          </content>
       </ScrollPane>
    </children></AnchorPane>

@@ -7,9 +7,13 @@
 	-fx-fill: #FFFFFF;
 	-fx-font-family: Calibri;
 }
-
+	
 .middlePane .textBox{
 	   -fx-border-color: #0E141B;
 	   -fx-border-radius: 3;
 	   -fx-fill: #ffffff
+}
+
+.scroll-pane {
+    -fx-background-color:transparent;
 }

@@ -1,11 +1,12 @@
 package guiControllers;
-import java.io.IOException;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
 import java.net.URL;
-import java.security.PrivilegedActionException;
-import java.util.HashMap;
 import java.util.ResourceBundle;
 import java.util.Set;
 
+import org.omg.CORBA.PRIVATE_MEMBER;
 import org.omg.CORBA.PUBLIC_MEMBER;
 
 import javafx.collections.ObservableList;
@@ -18,6 +19,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBase;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Border;
@@ -33,7 +36,7 @@ import javafx.scene.layout.VBox;
 public class MainController implements Controller{
     //Add updates to assertControllerExists() manually.
     @FXML 
-    private Button findPatientButton, addAppointmentsButton, findAppointmentsButton, 
+    private Button  addAppointmentsButton, 
 				   addPatientButton, exportResultsButton; // need to be handled separate: notesButton, diagramButton;
     @FXML private Pane  welcomePane;
     //welcomePane, cameraPane, findPatientPane, addPatientPane, 
@@ -44,6 +47,7 @@ public class MainController implements Controller{
     @FXML private AnchorPane centerAP;
     @FXML private Tab notesTab, diagramTab;
 
+    @FXML private TextField searchBox;
     public MainController() {
     	//Default Constructor
     } 
@@ -66,9 +70,9 @@ public class MainController implements Controller{
 	 * @return returns true if all passed
 	 */
 	public final void assertControlsExist(){
-		assert findPatientButton != null  : "fx:id=\"findPatientButton\" was not injected: check your FXML file 'simple.fxml'.";; 
+//		assert findPatientButton != null  : "fx:id=\"findPatientButton\" was not injected: check your FXML file 'simple.fxml'.";; 
 		assert addAppointmentsButton != null : "fx:id=\"addAppointmentsButton\" was not injected: check your FXML file 'simple.fxml'.";;
-		assert findAppointmentsButton != null : "fx:id=\"findAppointmentsButton\" was not injected: check your FXML file 'simple.fxml'.";;
+//		assert findAppointmentsButton != null : "fx:id=\"findAppointmentsButton\" was not injected: check your FXML file 'simple.fxml'.";;
 		assert addPatientButton != null : "fx:id=\"addPatientButton\" was not injected: check your FXML file 'simple.fxml'.";;
 		assert exportResultsButton != null : "fx:id=\"exportResultsButton\" was not injected: check your FXML file 'simple.fxml'.";;
 		assert notesTab != null : "fx:id=\"notesTab\" was not injected: check your FXML file 'simple.fxml'.";;
@@ -112,10 +116,10 @@ public class MainController implements Controller{
 	public void loadAddPatientPane(ActionEvent e){ //may need changing to patients
 		loadPane("/FXML/AddPatientPane.fxml");
 	}
-	@FXML
-	public void loadFindAppointmentsPane(ActionEvent e){
-		loadPane("/FXML/FindAppointmentsPane.fxml");
-	}
+//	@FXML
+//	public void loadFindAppointmentsPane(ActionEvent e){
+//		loadPane("/FXML/FindAppointmentsPane.fxml");
+//	}
 	
 	@FXML
 	public void loadExportResultsPane(ActionEvent e){
@@ -143,14 +147,17 @@ public class MainController implements Controller{
 				e.printStackTrace();		
 			}
 	}
-
+	
+	/**
+	 * On search box, enter being pressed.
+	 */
 
 	@Override
 	public void setOnActions() {		
-		findPatientButton.setOnAction(new EventHandler<ActionEvent>() {
-		    @Override public void handle(ActionEvent e) {
-		    	System.out.println("check1");
-		    	loadFindPatientPane(e);
+		
+		searchBox.setOnKeyPressed(e -> {
+		    if (e.getCode() == KeyCode.ENTER) {
+		    	loadFindPatientPane(null);		    
 		    }});
 		
 		addPatientButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -159,10 +166,10 @@ public class MainController implements Controller{
 		    	loadAddPatientPane(e);
 		    }});
        
-		findAppointmentsButton.setOnAction(new EventHandler<ActionEvent>() {
-		    @Override public void handle(ActionEvent e) {
-		    	loadFindAppointmentsPane(e);
-		    }});
+//		findAppointmentsButton.setOnAction(new EventHandler<ActionEvent>() {
+//		    @Override public void handle(ActionEvent e) {
+//		    	loadFindAppointmentsPane(e);
+//		    }});
 		addAppointmentsButton.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
 		    	loadAddAppointmentsPane(e);
@@ -171,11 +178,13 @@ public class MainController implements Controller{
 		    @Override public void handle(ActionEvent e) {
 		    	loadExportResultsPane(e);
 		    }});
+
+		
+		
 		//, addAppointmentsButton, findAppointmentsButton, 
 		//, exportResultsButton;
+		
+		}
 	}
-}
-
-
 
 
