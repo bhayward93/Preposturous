@@ -4,4 +4,6 @@
 /cSS/
 /enums/
 /guiControllers/
+/hibernate.cfg.xml
+/hibernate.properties
 /utils/

@@ -36,7 +36,7 @@ import javafx.scene.layout.VBox;
 public class MainController implements Controller{
     //Add updates to assertControllerExists() manually.
     @FXML 
-    private Button  addAppointmentsButton, startAppointmentButton,
+    private Button  addAppointmentsButton, startAppointmentButt on,
 				   addPatientButton, exportResultsButton; // need to be handled separate: notesButton, diagramButton;
     @FXML private Pane  welcomePane;
     //welcomePane, cameraPane, findPatientPane, addPatientPane, 

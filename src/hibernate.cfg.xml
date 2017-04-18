@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="prepSF">
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc</property>
+        <property name="hibernate.connection.password">B34nsprout</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://preposturous-desktop-server.database.windows.net:1433;database=preposturous-desktop-db;user=p4117178@preposturous-desktop-server;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;</property>
+        <property name="hibernate.connection.username">p4117178</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+    </session-factory>
+</hibernate-configuration>
