@@ -3,6 +3,7 @@ package application;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import utils.DatabaseHelper;
 import utils.utils;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -15,6 +16,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			DatabaseHelper.connectToDb();
 			BorderPane root = FXMLLoader.load(getClass().getResource("/FXML/Main.fxml"));
 			Scene scene = new Scene(root,658,401);			
 			scene.getStylesheets().add(getClass().getResource("/cSS/application.css").toExternalForm());
@@ -24,7 +26,7 @@ public class Main extends Application {
 			primaryStage.setMinHeight(370); //NOT WORKING
 
 			primaryStage.setScene(scene);
-			primaryStage.show();	
+			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

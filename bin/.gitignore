@@ -1,9 +1,5 @@
-/FXML/
-/Res/
 /application/
-/cSS/
+/dataStructures/
 /enums/
 /guiControllers/
-/hibernate.cfg.xml
-/hibernate.properties
 /utils/
