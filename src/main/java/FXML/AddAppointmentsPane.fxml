@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="217.0" prefWidth="657.0" style="-fx-background-color: #414760;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="addAppointmentsPane" prefHeight="217.0" prefWidth="657.0" style="-fx-background-color: #414760;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="164.0" layoutY="28.0" styleClass="fonts" stylesheets="@../cSS/middlePane.css" text="Current Patient: " textFill="#dad7d7">
          <font>

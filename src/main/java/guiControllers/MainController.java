@@ -5,16 +5,19 @@ import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Set;
+import java.util.concurrent.BlockingDeque;
 
 import org.omg.CORBA.PRIVATE_MEMBER;
 import org.omg.CORBA.PUBLIC_MEMBER;
 
+import application.Main;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBase;
 import javafx.scene.control.Tab;
@@ -69,7 +72,7 @@ public class MainController implements Controller{
 	 * https://blogs.oracle.com/jmxetc/entry/connecting_scenebuilder_edited_fxml_to
 	 * @return returns true if all passed
 	 */
-	public final void assertControlsExist(){
+	   public final void assertControlsExist(){
 //		assert findPatientButton != null  : "fx:id=\"findPatientButton\" was not injected: check your FXML file 'simple.fxml'.";; 
 		assert addAppointmentsButton != null : "fx:id=\"addAppointmentsButton\" was not injected: check your FXML file 'simple.fxml'.";;
 //		assert findAppointmentsButton != null : "fx:id=\"findAppointmentsButton\" was not injected: check your FXML file 'simple.fxml'.";;
@@ -101,6 +104,11 @@ public class MainController implements Controller{
 	public void clearCenterNode(){
 		this.centerAP.getChildren().clear();	   
 	}	
+
+	
+	public final ObservableList<Node> getCenterNode(){
+		return (this.centerAP.getChildren());
+	}
 	
 	@FXML 
 	public void loadCameraPane(ActionEvent e)	{
@@ -136,14 +144,6 @@ public class MainController implements Controller{
 	
 	private final void loadPane(String fxmlPath){	
 		try {
-				try {
-					if(centerAP.getChildren().size() > 0) {
-						centerAP.getChildren().remove(0);
-						System.out.println("hi");
-					}
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
 				AnchorPane newCenter = FXMLLoader.load(getClass().getResource(fxmlPath));
 				System.out.println("Trying to open: "+fxmlPath);
 				mainWindow.setCenter(newCenter); //maybe this 
@@ -193,6 +193,13 @@ public class MainController implements Controller{
 		//, exportResultsButton;
 		
 		}
+
+	//returns the root node
+	public Parent getRoot() {
+		return addAppointmentsButton.getParent();
 	}
+
+}
+	
 
 
