@@ -1,6 +1,8 @@
 package test;
 
 import java.sql.Connection;
+import java.sql.SQLException;
+
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,12 +30,21 @@ public class DatabaseHelperTest {
 
 	@Test
 	public final void testCloseConnection() {
-		assert(DatabaseHelper.isConnected(thisConn));
+		try {
+			thisConn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		assert(!DatabaseHelper.isConnected(thisConn));
 	}
 
 	@Test
-	public final void testIsConnected() {
+	public static final void testIsConnected() {
+		try{
 		assert(DatabaseHelper.isConnected(thisConn));
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	@Test
