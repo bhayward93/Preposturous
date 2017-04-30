@@ -12,21 +12,22 @@ import javafx.scene.image.ImageView;
  */
 public class PointUI extends Point {
 
-    private Image imgV;
-//    private FrameLayout.LayoutParams lp;
-    private Dimension2D lp;
+    private ImageView imgV;
+//    private FrameLayout.LayoutParams dimensions;
+    private Dimension2D dimensions;
     private Image image; //was a bitmap
     private boolean lockFlag;
 
-    public PointUI(Image iv,Image img, int pixelToDp){
+    public PointUI(ImageView iv,Image img, float pixelToDp){
         super();
         imgV = iv;
         image = img;
         lockFlag = false;
-        lp.height = (pixelToDp,pixelToDp);
-        imgV.setImage(image);
-        imgV.setLayoutX(lp.width);
-        imgV.setLayoutY(lp.height);
+        
+        dimensions.height = 1;
+        imgV.setImage(img);
+        imgV.setLayoutX(dimensions.width);
+        imgV.setLayoutY(dimensions.height);
     }
 
 
@@ -39,30 +40,32 @@ public class PointUI extends Point {
         this.imgV = imgV;
     }
 
-    public FrameLayout.LayoutParams getLp() {
-        return lp;
+    public Dimension2D getdimensions() {
+        return dimensions;
     }
 
-    public void setLp(FrameLayout.LayoutParams lp) {
-        this.lp = lp;
-        this.imgV.setLayoutParams(lp);
+    public void setdimensions(Dimension2D dimensions) {
+    	  
+    	this.dimensions = dimensions;
+        this.imgV.setLayoutX(dimensions.width);
+        this.imgV.setLayoutY(dimensions.height);
     }
 
-    public Bitmap getImage() {
+    public Image getImage() {
         return image;
     }
 
-    public void setImage(Bitmap image) {
+    public void setImage(Image image) {
         this.image = image;
     }
     @Override
     public int getX(){
-        return lp.leftMargin;
+        return 	Math.round(dimensions.width);
     }
 
     @Override
     public int getY(){
-        return lp.topMargin;
+        return Math.round(dimensions.height);
     }
 
     /**
@@ -72,18 +75,18 @@ public class PointUI extends Point {
      * @param inPixels An integer conversion of the DP point size stored in dimens.xml.
      */
     public void movePoint(Direction dir, float inPixels) {
-        FrameLayout.LayoutParams nlp = new FrameLayout.LayoutParams(Math.round(inPixels), Math.round(inPixels));
-        nlp.leftMargin = this.getX() + dir.getX();
-        nlp.topMargin = this.getY() + dir.getY();
-        setLp(nlp);
+        Dimension2D ndimensions = new Dimension2D(Math.round(inPixels), Math.round(inPixels));
+        ndimensions.width = this.getX() + dir.getX();
+        ndimensions.height = this.getY() + dir.getY();
+        setdimensions(ndimensions);
     }
 
     public void setXUI(int xCor){
-        lp.leftMargin = xCor;
+        dimensions.width = xCor;
     }
 
     public void setYUI(int yCor){
-        lp.topMargin = yCor;
+        dimensions.height = yCor;
     }
 
     public boolean getLockedFlag() {

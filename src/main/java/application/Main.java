@@ -28,9 +28,9 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
-			DatabaseHelper.connectToDb();
-			Connection conn = DatabaseHelper.getAppointments(id, conn);
-			String s = 
+			//DatabaseHelper.connectToDb();
+			//Connection conn = DatabaseHelper.getAppointments(id, conn);
+			//String s = 
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

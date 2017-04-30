@@ -1,4 +1,10 @@
-/utils/
+/FXML/
+/Res/
 /application/
-/test/
+/cSS/
 /dataStructures/
+/enums/
+/guiControllers/
+/mappings/
+/test/
+/utils/

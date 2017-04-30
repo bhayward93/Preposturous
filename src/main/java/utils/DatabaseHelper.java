@@ -10,7 +10,11 @@ import java.util.ArrayList;
 import org.junit.experimental.theories.Theories;
 
 import dataStructures.PointAnnotation;
+import dataStructures.PointUI;
+import dataStructures.Appointment;
 import dataStructures.LesserPhotoView;
+import dataStructures.Patient;
+import dataStructures.Point;
 /**
  * Various helper functions to help manage database related connections.
  * @author Ben Hayward
@@ -193,36 +197,35 @@ public void addAnnotation(PointAnnotation a, int id)
    	}
 }
 
-public void addPoints(LesserPhotoView lpw, ArrayList<PointUI> points)
+public synchronized void addPoints(LesserPhotoView lpw, ArrayList<PointUI> points) //TODO Is this sync effective?
 {
-
     for(PointUI p: points)
     {
-        values.put("viewId", lpw.getViewId());
-        values.put("name", p.getName());
-        values.put("x", p.getX());
-        values.put("y", p.getY());
-        values.put("status", 1);
-
-        database.insert("Point", null, values);
-    }
+	    try{
+		     stmt = conn.createStatement();
+			 String sql = "INSERT INTO POINT " +
+					 			"VALUES ("+lpw.getViewId()+", '"+p.getName()+"','"+ p.getX()+"', "+p.getY()+", 1)";
+			 stmt.executeUpdate(sql);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+    }    
 }
 
-public void addBarPoints(LesserPhotoView lpw,  ArrayList<Point> points)
+public synchronized void addBarPoints(LesserPhotoView lpw,  ArrayList<Point> points)
 {
-    ContentValues values = new ContentValues();
-
-    for(Point p: points)
-    {
-        values.put("viewId", lpw.getViewId());
-        values.put("name", p.getName());
-        values.put("x", p.getX());
-        values.put("y", p.getY());
-        values.put("status", 1);
-
-        database.insert("Point", null, values);
+    stmt = conn.createStatement();
+    for(Point p: points){
+    	  try{
+ 		     stmt = conn.createStatement();
+ 			 String sql = "INSERT INTO POINT " +
+ 					 			"VALUES ("+lpw.getViewId()+", '"+p.getName()+"','"+ p.getX()+"', "+p.getY()+", 1)";
+ 			 stmt.executeUpdate(sql);
+ 		}catch(Exception e){
+ 			e.printStackTrace();
+ 		}
     }
-}
+ }
 
 //Not sure this is needed?
 //public void addPoint(int viewID, String name, int x, int y)
@@ -238,105 +241,113 @@ public void addBarPoints(LesserPhotoView lpw,  ArrayList<Point> points)
 //    database.insert("Point", null, values);
 //}
 
-public void addView(Appointment apnt, PhotoView pView)
+public void addView(Appointment apnt, LesserPhotoView pView)
 {
-    ContentValues values = new ContentValues();
-
-    values.put("appointmentId", apnt.getAppointmentId());
-    values.put("viewAngle", pView.getViewAngleValue());
-    values.put("viewType", pView.getViewTypeValue());
-    values.put("filePath", pView.getFilePath());
-    values.put("active", "True");
-
-    database.insert("View", null, values);
+	stmt = conn.createStatement();
+    	  try{
+ 		     stmt = conn.createStatement();
+ 			 String sql = "INSERT INTO POINT " +
+ 					 			"VALUES ("+apnt.getAppointmentId()+", '"+pView.getViewAngleValue()+"','"+ pView.getViewTypeValue()+"', "+pView.getFilePath()+", true)";
+ 			 stmt.executeUpdate(sql);
+ 		}catch(Exception e){
+ 			e.printStackTrace();
+ 		}
 }
 
 
 //need to see about database fields, and amend.
 public void addPatient(Patient ptnt)
 {
-    Patient patient = ptnt;
-
-    ContentValues values = new ContentValues();
-
-    values.put("accountNo", "");
-    values.put("firstName", patient.getFirstName());
-    values.put("middleNames", patient.getMiddleNames());
-    values.put("lastName", patient.getLastName());
-    values.put("address1", patient.getAddress1());
-    values.put("address2", patient.getAddress2());
-    values.put("address3", patient.getAddress3());
-    values.put("town", patient.getTown());
-    values.put("county", patient.getCounty());
-    values.put("postCode", patient.getPostCode());
-    values.put("phone", patient.getPhone());
-    values.put("email", patient.getEmail());
-    values.put("active", "True");
-    values.put("personKey", patient.getPersonKey());
-    //values.put("gender", patient.getGenderValue());
-    //values.put("dob", patient.getDob());
-
-    database.insert("Person", null, values);
-
-    //pass objects gndr a dob into param
-    linkPatient(1, "11/11/2001", patient.getPersonKey());
+	stmt = conn.createStatement();
+	  try{
+	     stmt = conn.createStatement();
+		 String sql = "INSERT INTO POINT " +
+				 			"VALUES (NULL, '"
+				 						   +ptnt.getFirstName()+"', '"
+				 						   +ptnt.getMiddleNames() + "', '"
+				 						   +ptnt.getLastName() + "', '"
+				 						   +ptnt.getAddress1() + "', '"
+				 						   +ptnt.getAddress2() + "', '"
+				 						   +ptnt.getAddress3() + "', '"
+				 						   +ptnt.getTown() + "', '"
+				 						   +ptnt.getCounty() + "', '"
+				 						   +ptnt.getPostCode() + "', '"
+				 					       +ptnt.getPhone() + "', '"
+				 						   +ptnt.getEmail() + "', "
+				 						   +"True , '"
+				 						   +ptnt.getPersonKey()
+				 						   +"')";
+		 stmt.executeUpdate(sql);
+	}catch(Exception e){
+		e.printStackTrace();
+	}   
+	linkPatient(1, "11/11/2001", ptnt.getPersonKey());
 
 }
+    //values.put("gender", patient.getGenderValue());
+    //values.put("dob", patient.getDob());
+    //pass objects gndr a dob into param
+
+
 
 public void linkPatient(int gender, String dob, String key)
 {
-    String res = database.query("Person WHERE personKey = '" + key + "';",
-            null, null, null, null, null, null);
-
-    if (res != null && res.moveToFirst())
-    {
-        //values must contain all db fields that are not autifill...
-        ContentValues values = new ContentValues();
-
-        values.put("personId", res.getString(res.getColumnIndex("_id")));
-        values.put("gender", gender);
-        values.put("note", "");
-        values.put("dob", dob);
-
-
-        database.insert("Patient", null, values);
-
-        linkClinician(res.getString(res.getColumnIndex("_id")));
-    }
+	stmt = conn.createStatement();
+    	  try{
+ 		     stmt = conn.createStatement();
+ 			  String res = "Person WHERE personKey = '" + key + "';";
+ 			 stmt.executeUpdate(res);
+			  if (res != null) // && res.moveToFirst()) - Android code; TODO look up at a later date
+		      {
+		      String autoIncId = "";
+		      
+	          //values must contain all db fields that are not autofill...
+				  String sql = "INSERT INTO PATIENT " +
+				 			"VALUES ("+autoIncId+", "   //Needs auto-incrementing, the DB should hopefully already be set up to do this.
+				 						   +gender+", "
+				 						   +", '"
+				 						   +dob+"')";
+				  stmt.executeUpdate(sql);			
+			        linkClinician(autoIncId);
+			    }
+    	  }catch(Exception e){
+   			e.printStackTrace();
+   		}
 }
 
 
 public void finishAppointment(int id)
 {
-
-    String res = database.query("Appointment WHERE _id = '" + id + "';",
-            null, null, null, null, null, null);
-
-    if (res != null && res.moveToFirst())
+	try {
+		stmt = conn.createStatement();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	ResultSet rs = null;
+	rs = stmt.executeQuery("Appointment WHERE _id = '" + id + "';");
+    if (rs != null) //&& res.moveToFirst())
     {
-        ContentValues values = new ContentValues();
-        //put appointment status to 1 = compelte
-        values.put("status", 1);
-
-        database.update("Appointment", values, null,null);
+        //put appointment status to 1 = complete
+    	stmt.executeQuery("INSERT INTO APPOINTMENT VALUES ("+1+")"); //TODO This should be setting the status to complete but may update another row...
     }
 
 }
 
 public void linkClinician(String id)
 {
-    String res = database.query("Patient WHERE personId = '" + id + "';",
-            null, null, null, null, null, null);
-
-    if (res != null && res.moveToFirst())
+	try {
+		stmt = conn.createStatement();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	ResultSet rs = null;
+	rs = stmt.executeQuery("Patient WHERE personId = '" + id + "';");
+    if (rs != null)
     {
-        ContentValues values = new ContentValues();
         //clinician id needs address so not hard coded
-        values.put("clinicianId", 1);
-        values.put("patientId", res.getString(res.getColumnIndex("_id")));
-        values.put("active", "True");
-
-        database.insert("Assignment", null, values);
+    	
+     rs=stmt.executeQuery(	"INSERT INTO ASSIGNMENT "
+     + "VALUES (1, NULL, TRUE)");
     }
 }
 
