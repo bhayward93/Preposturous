@@ -2,15 +2,21 @@ package utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import org.junit.experimental.theories.Theories;
 
 import dataStructures.PointAnnotation;
 import dataStructures.PointUI;
+import enums.AppointmentStatus;
+import enums.ViewAngle;
+import enums.ViewType;
 import dataStructures.Appointment;
 import dataStructures.LesserPhotoView;
 import dataStructures.Patient;
@@ -120,7 +126,7 @@ public class DatabaseHelper {
 	}
 
 
-public ResultSet findPatient(String patientsName)
+public ResultSet findPatient(String patientsName) throws SQLException
 {
 	try {
 		stmt = conn.createStatement();
@@ -132,7 +138,7 @@ public ResultSet findPatient(String patientsName)
     return rs;
 }
 
-public ResultSet findPatientByKey(String key)
+public ResultSet findPatientByKey(String key) throws SQLException
 {
 	try {
 		stmt = conn.createStatement();
@@ -144,7 +150,7 @@ public ResultSet findPatientByKey(String key)
     return rs;
 }
 
-public ResultSet filterPatient(String patientsName)
+public ResultSet filterPatient(String patientsName) throws SQLException
 {
 	try {
 		stmt = conn.createStatement();
@@ -156,7 +162,7 @@ public ResultSet filterPatient(String patientsName)
     return rs;
 }
 
-public ResultSet fecthAll()
+public ResultSet fecthAll() throws SQLException
 {
 	try {
 		stmt = conn.createStatement();
@@ -212,7 +218,7 @@ public synchronized void addPoints(LesserPhotoView lpw, ArrayList<PointUI> point
     }    
 }
 
-public synchronized void addBarPoints(LesserPhotoView lpw,  ArrayList<Point> points)
+public synchronized void addBarPoints(LesserPhotoView lpw,  ArrayList<Point> points) throws SQLException
 {
     stmt = conn.createStatement();
     for(Point p: points){
@@ -241,7 +247,7 @@ public synchronized void addBarPoints(LesserPhotoView lpw,  ArrayList<Point> poi
 //    database.insert("Point", null, values);
 //}
 
-public void addView(Appointment apnt, LesserPhotoView pView)
+public void addView(Appointment apnt, LesserPhotoView pView) throws SQLException
 {
 	stmt = conn.createStatement();
     	  try{
@@ -256,7 +262,7 @@ public void addView(Appointment apnt, LesserPhotoView pView)
 
 
 //need to see about database fields, and amend.
-public void addPatient(Patient ptnt)
+public void addPatient(Patient ptnt) throws SQLException
 {
 	stmt = conn.createStatement();
 	  try{
@@ -290,7 +296,7 @@ public void addPatient(Patient ptnt)
 
 
 
-public void linkPatient(int gender, String dob, String key)
+public void linkPatient(int gender, String dob, String key) throws SQLException
 {
 	stmt = conn.createStatement();
     	  try{
@@ -316,7 +322,7 @@ public void linkPatient(int gender, String dob, String key)
 }
 
 
-public void finishAppointment(int id)
+public void finishAppointment(int id) throws SQLException
 {
 	try {
 		stmt = conn.createStatement();
@@ -333,7 +339,7 @@ public void finishAppointment(int id)
 
 }
 
-public void linkClinician(String id)
+public void linkClinician(String id) throws SQLException
 {
 	try {
 		stmt = conn.createStatement();
@@ -351,7 +357,7 @@ public void linkClinician(String id)
     }
 }
 
-public ArrayList patientList(ResultSet resultSet){
+public ArrayList patientList(ResultSet resultSet) throws SQLException{
 	 ArrayList<Patient> patients = new ArrayList<Patient>();
 	 if (resultSet != null)    {
 		 while (resultSet.next()) {
@@ -379,9 +385,18 @@ public ArrayList patientList(ResultSet resultSet){
     return patients;
 }
 
-public String getPatientsOfClinician()
+public ResultSet getPatientsOfClinician()
 {
-    String res = database.rawQuery("SELECT Person._id," +
+	
+	Statement stmt = null;
+	try {
+		stmt = conn.createStatement();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	ResultSet rs = null;
+	try {
+		rs = stmt.executeQuery("SELECT Person._id," +
                     " Person.firstName," +
                     " Person.lastName," +
                     " Person.address1," +
@@ -395,31 +410,34 @@ public String getPatientsOfClinician()
                     "On Person._id = Patient.personId " +
                     "INNER JOIN Assignment " +
                     "On Assignment.patientId = Patient._id " +
-                    "WHERE Assignment.clinicianId = 1",
-            null);
+                    "WHERE Assignment.clinicianId = 1");
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
 
-    return res;
+    return rs;
 }
 
-public ArrayList appointmentList(String c)
+public ArrayList appointmentList(ResultSet c) throws SQLException
 {
     ArrayList<Appointment> appointments = new ArrayList<Appointment>();
 
-    if (c != null && c.moveToFirst())
+    if (c != null && c.first())
     {
-        for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext())
+        for (c.first(); !c.isAfterLast(); c.next())
         {
             try
             {
-                appointments.add(new Appointment(c.getInt(c.getColumnIndex("_id")),
-                        new SimpleDateFormat("dd/MM/yyyy").parse(c.getString(c.getColumnIndex("date"))),
-                        new SimpleDateFormat("HH:mm").parse(c.getString(c.getColumnIndex("time"))),
-                        AppointmentStatus.valueOf((byte) c.getInt(c.getColumnIndex("status"))), new LesserPhotoView[0]));
+                appointments.add(new Appointment(c.getInt(c.findColumn("_id")),
+                        new SimpleDateFormat("dd/MM/yyyy").parse(c.getString(c.findColumn("date"))),
+                        new SimpleDateFormat("HH:mm").parse(c.getString(c.findColumn("time"))),
+                        0, 
+                        AppointmentStatus.valueOf((byte) c.getInt(c.findColumn("status"))), 
+                        new LesserPhotoView[0]));
             } catch (ParseException e)
             {
                 e.printStackTrace();
             }
-
         }
     }
     c.close();
@@ -428,40 +446,44 @@ public ArrayList appointmentList(String c)
 }
 
 
-public String getAppointments(int id)
+public ResultSet getAppointments(int id) throws SQLException
 {
-
-    String res = database.rawQuery("SELECT Person._id," +
-                    " Person.firstName," +
-                    " Person.address1," +
-                    "" +
-                    " Person.personKey," +
-                    " Patient.gender, Patient.dob, Patient.personId, Patient._id, " +
-                    " Appointment.patientId, Appointment.date, Appointment.time, Appointment._id, Appointment.status " +
-                    "FROM Person INNER JOIN Patient " +
-                    "On Person._id = Patient.personId " +
-                    "INNER JOIN Appointment " +
-                    "On Appointment.patientId = Patient._id " +
-                    "WHERE Appointment.patientId = "+id,
-            null);
-
-    return res;
+	stmt = conn.createStatement();
+	  try{
+	     stmt = conn.createStatement();
+		 String sql = "SELECT Person._id," +
+                 " Person.firstName," +
+                 " Person.address1," +
+                 "" +
+                 " Person.personKey," +
+                 " Patient.gender, Patient.dob, Patient.personId, Patient._id, " +
+                 " Appointment.patientId, Appointment.date, Appointment.time, Appointment._id, Appointment.status " +
+                 "FROM Person INNER JOIN Patient " +
+                 "On Person._id = Patient.personId " +
+                 "INNER JOIN Appointment " +
+                 "On Appointment.patientId = Patient._id " +
+                 "WHERE Appointment.patientId = "+id;
+		return stmt.executeQuery(sql);
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+	return null;
 }
 
 
 
-public PhotoView completeAppointment(String c)
+public LesserPhotoView completeAppointment(ResultSet c) throws SQLException
 {
     //ArrayList<Appointment> appointments = new ArrayList<Appointment>();
 
-    PhotoView pView = new PhotoView();
-    if (c != null && c.moveToFirst())
+    LesserPhotoView pView = new LesserPhotoView();
+    if (c != null && c.first())
     {
 //        PhotoView pView = new PhotoView(c.getInt(c.getColumnIndex("_id")),
 //                viewAnglew, viewtype, strinpath, imgphoto,
 //                arraylistpoint, arraylistlines)
-        pView.setViewId(c.getInt(c.getColumnIndex("_id")));
-        pView.setFilePath(c.getString(c.getColumnIndex("filePath")));
+        pView.setViewId(c.getInt(c.findColumn("_id")));
+        pView.setFilePath(c.getString(c.findColumn("filePath")));
 
 //        for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext())
 //        {
@@ -484,38 +506,42 @@ public PhotoView completeAppointment(String c)
     return pView;
 }
 
-public String getCompleteAppointment(int id)
+public ResultSet getCompleteAppointment(int id) throws SQLException
 {
-    Log.d("id is=",""+id);
-    String res = database.rawQuery("SELECT View._id," +
-                    " View.viewAngle," +
-                    " View.filePath," +
-                    "" +
-                    " View.active," +
-                    " Appointment._id, Appointment.status " +
-                    "FROM Appointment INNER JOIN View " +
-                    "On Appointment._id = View.appointmentId " +
-                    "WHERE Appointment._Id = "+id,
-            null);
-
-    return res;
+	stmt = conn.createStatement();
+	  try{
+	     stmt = conn.createStatement();
+		 String sql = "SELECT View._id," +
+                 " View.viewAngle," +
+                 " View.filePath," +
+                 "" +
+                 " View.active," +
+                 " Appointment._id, Appointment.status " +
+                 "FROM Appointment INNER JOIN View " +
+                 "On Appointment._id = View.appointmentId " +
+                 "WHERE Appointment._Id = "+id;
+		return stmt.executeQuery(sql);
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+	return null;
 }
 
 
-public ArrayList viewsList(String c)
+public ArrayList viewsList(ResultSet c) throws SQLException
 {
-    ArrayList<PhotoView> views = new ArrayList<PhotoView>();
+    ArrayList<LesserPhotoView> views = new ArrayList<LesserPhotoView>();
 
-    if (c != null && c.moveToFirst())
+    if (c != null && c.first())
     {
-        for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext())
+        for (c.first(); !c.last(); c.next())
         {
             //TRY/CATCH remove by AS why? Also, issues with ViewAngle/Type as
             //DB BLOB needs int??
-            views.add(new PhotoView(c.getInt(c.getColumnIndex("_id")),
-                    ViewAngle.valueOf((byte) c.getInt(c.getColumnIndex("viewAngle"))),
-                    ViewType.valueOf((byte) c.getInt(c.getColumnIndex(("viewType")))),
-                    c.getString(c.getColumnIndex("filePath")), null,null,null));
+            views.add(new LesserPhotoView(c.getInt(c.findColumn("_id")),
+                    ViewAngle.valueOf((byte) c.getInt(c.findColumn("viewAngle"))),
+                    ViewType.valueOf((byte) c.getInt(c.findColumn(("viewType")))),
+                    c.getString(c.findColumn("filePath"))));
 //AppointmentStatus.valueOf((byte) c.getInt(c.getColumnIndex("status")))
         }
     }
@@ -524,78 +550,90 @@ public ArrayList viewsList(String c)
     return views;
 }
 
-public String getViews(int id)
-{
-    Log.d("id is=",""+id);
-    String res = database.rawQuery("SELECT View._id," +
+public ResultSet getViews(int id) throws SQLException
+{	
+	stmt = conn.createStatement();
+	  try{
+	     stmt = conn.createStatement();
+		 String sql = "SELECT View._id," +
                     " View.appointmentId," +
                     " View.viewAngle," +
                     "" +
                     " View.viewType," +
                     " View.filePath, View.active " +
                     "FROM View " +
-                    "WHERE View.appointmentId = "+id,
-            null);
-
-    return res;
+                    "WHERE View.appointmentId = "+id;
+		return stmt.executeQuery(sql); //TODO Check what are queries; this has been used wrong.
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+	return null;
 }
 
-public ArrayList pointsList(String c)
+public ArrayList pointsList(ResultSet c) throws SQLException
 {
     ArrayList<Point> points = new ArrayList<Point>();
 
-    if (c != null && c.moveToFirst())
+    if (c != null && c.first())
     {
-        for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext())
+        for (c.first(); !c.isAfterLast(); c.next())
         {
-            points.add(new Point(c.getInt(c.getColumnIndex("_id")),c.getString(c.getColumnIndex("name")),
-                    c.getInt(c.getColumnIndex("x")), c.getInt(c.getColumnIndex("y")),null));
+            points.add(new Point(c.getInt(c.findColumn("_id")),c.getString(c.findColumn("name")),
+                    c.getInt(c.findColumn("x")), c.getInt(c.findColumn("y")),null));
         }
     }
     c.close();
-
     return points;
 }
 
-public String getPoints(int id)
-{
-    Log.d("id is=",""+id);
-    String res = database.rawQuery("SELECT Point._id," +
-                    " Point.name," +
-                    " Point.viewId," +
-                    "" +
-                    " Point.x," +
-                    " Point.y " +
-                    "FROM Point " +
-                    "WHERE Point.viewId = "+id,
-            null);
-
-    return res;
+public ResultSet getPoints(int id) throws SQLException{	
+	stmt = conn.createStatement();
+	  try{
+	     stmt = conn.createStatement();
+		 String sql = "SELECT Point._id," +
+                 " Point.name," +
+                 " Point.viewId," +
+                 "" +
+                 " Point.x," +
+                 " Point.y " +
+                 "FROM Point " +
+                 "WHERE Point.viewId = "+id;
+		return stmt.executeQuery(sql); //TODO Check what are queries; this has been used wrong.
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+	return null;
 }
 
-public String getAnnotation(int id)
-{
-    Log.d("id is=",""+id);
-    String res = database.rawQuery("SELECT Annotation._id," +
-                    " Annotation.text," +
-                    " Annotation.visualAnalogScale " +
-                    "FROM Annotation " +
-                    "WHERE Annotation.pointId = "+id,
-            null);
 
-    return res;
+
+public ResultSet getAnnotation(int id) throws SQLException
+{
+	stmt = conn.createStatement();
+	  try{
+	     stmt = conn.createStatement();
+		 String sql = "SELECT Annotation._id," +
+                 " Annotation.text," +
+                 " Annotation.visualAnalogScale " +
+                 "FROM Annotation " +
+                 "WHERE Annotation.pointId = "+id;
+		return stmt.executeQuery(sql); //TODO Check what are queries; this has been used wrong.
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+	return null;
 }
 
-public PointAnnotation annotationList(String c)
+public PointAnnotation annotationList(ResultSet c) throws SQLException
 {
     PointAnnotation anno = new PointAnnotation();
 
-    if (c != null && c.moveToFirst())
+    if (c != null && c.first())
     {
-        for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext())
+        for (c.first(); !c.isAfterLast(); c.next())
         {
-            anno.setVisualAnalogueScale(c.getInt(c.getColumnIndex("visualAnalogScale")));
-            anno.setText(c.getString(c.getColumnIndex("text")));
+            anno.setVisualAnalogueScale(c.getInt(c.findColumn("visualAnalogScale")));
+            anno.setText(c.getString(c.findColumn("text")));
         }
     }
     c.close();
@@ -603,14 +641,14 @@ public PointAnnotation annotationList(String c)
     return anno;
 }
 
-public PointAnnotation getAnnotationObject(String c)
+public PointAnnotation getAnnotationObject(ResultSet c) throws SQLException
 {
 
     PointAnnotation anno = new PointAnnotation();
-    if (c != null && c.moveToFirst())
+    if (c != null && c.first())
     {
-        anno.setVisualAnalogueScale(c.getInt(c.getColumnIndex("visualAnalogScale")));
-        anno.setText(c.getString(c.getColumnIndex("text")));
+        anno.setVisualAnalogueScale(c.getInt(c.findColumn("visualAnalogScale")));
+        anno.setText(c.getString(c.findColumn("text")));
     }
     c.close();
 
@@ -618,16 +656,16 @@ public PointAnnotation getAnnotationObject(String c)
 }
 
 
-public Appointment prevAppointment(String c)
+public Appointment prevAppointment(ResultSet c) throws SQLException
 {
     ArrayList<Appointment> list = new ArrayList<Appointment>();
     Appointment apnt = new Appointment();
 
-    if (c != null && c.moveToFirst())
+    if (c != null && c.first())
     {
-        for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext())
+        for (c.first(); !c.last(); c.next())
         {
-            list.add(new Appointment(c.getInt(c.getColumnIndex("_id")), null, null, null, new LesserPhotoView[0]));
+            list.add(new Appointment(c.getInt(c.findColumn("_id")), null, null, 0, null, new LesserPhotoView[0]));
         }
 
         if(list.size() >= 2) {
@@ -639,9 +677,13 @@ public Appointment prevAppointment(String c)
     return apnt;
 }
 
-public String getLastAppointment(int id)
+public ResultSet getLastAppointment(int id) throws SQLException
 {
-    String res = database.rawQuery("SELECT Person._id," +
+	
+	stmt = conn.createStatement();
+	  try{
+	     stmt = conn.createStatement();
+		 String sql = "SELECT Person._id," +
                     " Person.firstName," +
                     " Person.address1," +
                     "" +
@@ -652,21 +694,32 @@ public String getLastAppointment(int id)
                     "On Person._id = Patient.personId " +
                     "INNER JOIN Appointment " +
                     "On Appointment.patientId = Patient._id " +
-                    "WHERE Appointment.patientId = "+id,
-            null);
-
-    return res;
+                    "WHERE Appointment.patientId = "+id;
+		return stmt.executeQuery(sql); //TODO Check what are queries; this has been used wrong.
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+	return null;
 }
 
 
 public boolean Login(String username, String password) throws SQLException
 {
-    String mString = database.rawQuery("SELECT * FROM Clinician WHERE username=? AND passHash=?", new String[]{username,password});
-    if (mString != null) {
-        if(mString.getCount() > 0)
-        {
-            return true;
-        }
-    }
-    return false;
+	  try {
+		    String query = "SELECT * FROM Clinician WHERE username=? AND passHash=?";
+	  
+		    PreparedStatement ps = conn.prepareStatement(query);
+	        //set this values using PreparedStatement
+	        ResultSet results = ps.executeQuery(query); //where ps is Object of PreparedStatement
+
+	        if(!results.next()) {
+	              DialogCreator.showError("A Problem Has Occured", "Username/Password incorrect); Wrong Username and Password.");  
+	        }
+
+	    } catch (SQLException sql) {
+	    	sql.printStackTrace();
+	    }
+	return false;
+}
+
 }
