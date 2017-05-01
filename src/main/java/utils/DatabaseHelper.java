@@ -351,30 +351,31 @@ public void linkClinician(String id)
     }
 }
 
-public ArrayList patientList(String c)
-{
-    ArrayList<Patient> patients = new ArrayList<Patient>();
-
-    if (c != null && c.moveToFirst())
-    {
-        for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext())
-        {
-            patients.add(new Patient(c.getInt(c.getColumnIndex("personId")),
-                    c.getString(c.getColumnIndex("firstName")),
-                    "mname",
-                    c.getString(c.getColumnIndex("lastName")),
-                    c.getString(c.getColumnIndex("address1")),
-                    c.getString(c.getColumnIndex("address2")),
-                    c.getString(c.getColumnIndex("address3")),
-                    "town","county","poscode","phonme","email",
-                    c.getString(c.getColumnIndex("personKey")),
-                    c.getInt(c.getColumnIndex("_id")),
-                    Byte.parseByte("1"),
-                    "NOTE TEXT",new ArrayList<Appointment>()));
-        }
-    }
-    c.close();
-
+public ArrayList patientList(ResultSet resultSet){
+	 ArrayList<Patient> patients = new ArrayList<Patient>();
+	 if (resultSet != null)    {
+		 while (resultSet.next()) {
+			 Patient patient = new Patient();
+			 patient.setPatientId(resultSet.findColumn("_id")); //c.getInt(c.getColumnIndex("_id"))
+			 patient.setFirstName(resultSet.getString("firstName"));
+			 patient.setMiddleNames(resultSet.getString("mName"));
+			 patient.setLastName(resultSet.getString("lastName"));
+			 patient.setAddress1(resultSet.getString("address1"));
+			 patient.setAddress2(resultSet.getString("address2"));
+			 patient.setAddress3(resultSet.getString("address3"));
+			 patient.setTown(resultSet.getString("town")); //TODO some of these labels may not be correct
+			 patient.setCounty(resultSet.getString("county"));
+			 patient.setPostCode(resultSet.getString("postcode"));
+			 patient.setPhone(resultSet.getString("phone"));
+			 patient.setEmail(resultSet.getString("email"));
+			 patient.setPersonKey(resultSet.getString("personKey"));
+			 patient.setPatientId(resultSet.getInt("_id"));
+			 patient.setGender(resultSet.getByte("gender"));//Byte.parseByte("1"), ?? why was a default value set.
+			 patient.setNote(resultSet.getString("noteText"));
+			 //may need an arraylist off appointments adding; see android code here  //NOTE TEXT",new ArrayList<Appointment>()));
+			 patients.add(patient);
+		 }
+     }
     return patients;
 }
 
